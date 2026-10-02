@@ -1,4 +1,4 @@
-// PacificFly — comportamiento compartido por las páginas de la propuesta (versión 3).
+// PacificFly — comportamiento compartido por las páginas de la propuesta (versión 4).
 // Cada bloque revisa si su sección existe en la página antes de actuar.
 (() => {
   const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -54,19 +54,20 @@
     observados.forEach(el => io.observe(el));
   }
 
-  // Tipos de traslado: en celular se deslizan; en escritorio es una cuadrícula y los controles no se ven
-  const lista = $('#tipos-lista');
-  if (lista) {
-    const items = $$('.tipo', lista);
-    const contador = $('.tipos__contador');
-    const anterior = $('.tipos__btn[data-dir="-1"]'), siguiente = $('.tipos__btn[data-dir="1"]');
-    const ancho = () => (items[1] ? items[1].offsetLeft - items[0].offsetLeft : lista.clientWidth);
+  // Carrusel deslizable genérico: lista que se desplaza de lado, flechas y contador «1 de N».
+  // En escritorio la lista no se desplaza (es cuadrícula u otra vista) y los controles se ocultan por CSS.
+  const deslizable = (lista, controles) => {
+    const items = () => [...lista.children];
+    const contador = $('[aria-live]', controles);
+    const anterior = $('[data-dir="-1"]', controles), siguiente = $('[data-dir="1"]', controles);
+    const ancho = () => { const it = items(); return it[1] ? it[1].offsetLeft - it[0].offsetLeft : lista.clientWidth; };
     const actualizar = () => {
       const desliza = lista.scrollWidth > lista.clientWidth + 2;
       lista.tabIndex = desliza ? 0 : -1;
       if (!desliza) return;
-      const i = Math.min(items.length - 1, Math.max(0, Math.round(lista.scrollLeft / ancho())));
-      contador.textContent = `${i + 1} de ${items.length}`;
+      const total = items().length;
+      const i = Math.min(total - 1, Math.max(0, Math.round(lista.scrollLeft / ancho())));
+      contador.textContent = `${i + 1} de ${total}`;
       anterior.disabled = lista.scrollLeft <= 2;
       siguiente.disabled = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 2;
     };
@@ -76,7 +77,11 @@
     }));
     addEventListener('resize', actualizar);
     actualizar();
-  }
+  };
+
+  // Tipos de traslado: cuadrícula en escritorio, deslizables en celular
+  const lista = $('#tipos-lista');
+  if (lista) deslizable(lista, $('.tipos__controles'));
 
   // Flota: al seleccionar un avión cambia la imagen. Sin foto, se muestra el aviso de foto pendiente.
   const pestanas = $$('.flota__tab');
@@ -120,6 +125,30 @@
     });
   }
 
+  // Flota en celular: en lugar de las pestañas, las aeronaves se deslizan una a una con su foto y sus datos
+  const flotaIn = $('.flota__in');
+  if (flotaIn && pestanas.length) {
+    const carrusel = document.createElement('div');
+    carrusel.className = 'flota__carrusel';
+    carrusel.innerHTML = '<ul class="flota__deslizable" id="flota-deslizable" aria-label="Aeronaves de la flota, desliza para ver las tres"></ul>' +
+      '<div class="flota__controles"><button class="flota__btn" type="button" data-dir="-1" aria-label="Ver la aeronave anterior"><svg class="icono"><use href="#i-volver"/></svg></button>' +
+      '<span class="flota__contador" aria-live="polite"></span>' +
+      '<button class="flota__btn" type="button" data-dir="1" aria-label="Ver la aeronave siguiente"><svg class="icono"><use href="#i-flecha"/></svg></button></div>';
+    const ul = $('ul', carrusel);
+    pestanas.forEach(t => {
+      const li = document.createElement('li');
+      li.className = 'flota__slide';
+      const img = document.createElement('img');
+      img.src = t.dataset.imagen; img.alt = t.dataset.alt || t.dataset.nombre; img.loading = 'lazy';
+      if (t.dataset.estudio === 'si') img.className = 'flota__foto--estudio';
+      const h = document.createElement('h3'); h.textContent = t.dataset.nombre;
+      const d = document.createElement('p'); d.textContent = $('small', t).textContent;
+      li.append(img, h, d); ul.append(li);
+    });
+    flotaIn.append(carrusel);
+    deslizable(ul, $('.flota__controles', carrusel));
+  }
+
   // Preguntas frecuentes
   $$('.acordeon__btn').forEach(b => b.addEventListener('click', () => {
     const abierto = b.getAttribute('aria-expanded') === 'true';
@@ -144,73 +173,6 @@
     marcar();
   });
 
-  // «Si prefieres que te contactemos»: formulario corto que llega a info@pacificflycol.com (FormSubmit)
-  const abrirContacto = $('#btn-contacto'), formContacto = $('#form-contacto');
-  if (abrirContacto && formContacto) {
-    const ok = $('#contacto-ok'), fallo = $('#contacto-error'), enviar = $('button[type=submit]', formContacto);
-    abrirContacto.addEventListener('click', () => {
-      const abierto = abrirContacto.getAttribute('aria-expanded') === 'true';
-      abrirContacto.setAttribute('aria-expanded', String(!abierto));
-      formContacto.hidden = abierto;
-      if (!abierto) $('#c-nombre').focus();
-    });
-    const digitos = (v) => v.replace(/\D/g, '').replace(/^57(?=\d{10}$)/, '');
-    const reglas = {
-      'c-nombre': (v) => v.trim() ? '' : 'Falta tu nombre, para saber a quién llamar.',
-      'c-telefono': (v) => digitos(v).length === 10 ? '' : 'Revisa el teléfono: debe tener 10 dígitos, por ejemplo 301 337 3413.',
-      'c-ubicacion': (v) => v.trim() ? '' : 'Falta dónde está el paciente. Escribe la ciudad y, si la sabes, la clínica.',
-      'c-datos': (v, el) => el.checked ? '' : 'Para enviar tus datos necesitamos tu autorización.'
-    };
-    const marcarCampo = (el, msg) => {
-      const err = document.getElementById(el.id + '-error');
-      el.setAttribute('aria-invalid', msg ? 'true' : 'false');
-      err.hidden = !msg; $('span', err).textContent = msg;
-    };
-    formContacto.addEventListener('input', (e) => {
-      const r = reglas[e.target.id];
-      if (r && e.target.getAttribute('aria-invalid') === 'true' && !r(e.target.value, e.target)) marcarCampo(e.target, '');
-    });
-    formContacto.addEventListener('change', (e) => {
-      const r = reglas[e.target.id];
-      if (r && e.target.type === 'checkbox' && !r(e.target.value, e.target)) marcarCampo(e.target, '');
-    });
-    formContacto.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      let primero = null;
-      Object.entries(reglas).forEach(([id, r]) => {
-        const el = document.getElementById(id), msg = r(el.value, el);
-        marcarCampo(el, msg);
-        if (msg && !primero) primero = el;
-      });
-      if (primero) { primero.focus(); return; }
-      if ($('input[name=_honey]', formContacto).value) return;
-      const tel = '+57 ' + digitos($('#c-telefono').value).replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
-      const datos = {
-        _subject: 'Ambulancia aérea: solicitud de contacto desde la página web',
-        _template: 'table',
-        'Nombre': $('#c-nombre').value.trim(),
-        'Teléfono': tel,
-        'Dónde está el paciente': $('#c-ubicacion').value.trim(),
-        'Autorizó el tratamiento de datos': 'Sí'
-      };
-      enviar.disabled = true; enviar.firstElementChild.textContent = 'Enviando…';
-      fallo.hidden = true;
-      try {
-        const r = await fetch(formContacto.dataset.envio, {
-          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(datos)
-        });
-        const j = await r.json().catch(() => ({}));
-        if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || r.status);
-        $('.contacto-tel', ok).textContent = tel;
-        formContacto.hidden = true; abrirContacto.hidden = true; ok.hidden = false; ok.focus();
-      } catch (err) {
-        fallo.hidden = false; fallo.focus();
-      } finally {
-        enviar.disabled = false; enviar.firstElementChild.textContent = 'Enviar mis datos';
-      }
-    });
-  }
-
   // Mapa de cobertura: todo el país con cobertura, el suroccidente y el Pacífico en rojo
   const datos = window.MAPA_COLOMBIA, svg = $('#mapa-svg');
   if (datos && svg) {
@@ -231,7 +193,7 @@
     // [nombre, lon, lat, lado de la etiqueta, secundaria (se oculta en celular), ajuste vertical]
     const destinos = [
       ['Barranquilla', -74.7808, 10.8896, 'der'],
-      ['Arauca', -70.7369, 7.0689, 'der'],
+      ['Arauca', -70.7369, 7.0689, 'abajo'],
       ['Florencia', -75.5644, 1.5892, 'der'],
       ['Bucaramanga', -73.1848, 7.1265, 'der'],
       ['Medellín', -75.4231, 6.1645, 'der'],

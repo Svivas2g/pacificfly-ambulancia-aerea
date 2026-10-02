@@ -1,4 +1,4 @@
-/* PacificFly — estilos compartidos de la propuesta (versión 3, 2 de octubre de 2026).
+/* PacificFly — estilos compartidos de la propuesta (versión 4, 2 de octubre de 2026).
    Marca: rojo #DE1C2A y azul #0F4289 en títulos, fondos y acciones. Secundarios (navy #071C4A,
    grises, blanco y rojos cercanos) solo en textos secundarios, detalles y títulos pequeños.
    Tipografía: Poppins, de los archivos que entregó la marca (assets/fuentes). */
@@ -102,58 +102,28 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* Tarjeta de urgencia */
 .solicitud{position:relative;z-index:5;margin-top:-160px}
 .tarjeta{display:grid;grid-template-columns:5fr 6fr;gap:40px;align-items:start;padding:34px;border-radius:24px;background:#fff;border:1px solid rgba(7,28,74,.06);box-shadow:var(--sombra-alta)}
-.tarjeta__tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;padding:3px 12px;border-radius:999px;background:var(--rojo);color:#fff;font-size:.8125rem;font-weight:600}
 .tarjeta h2{font-size:1.65rem}
-.panel-ahora__aviso{display:flex;align-items:flex-start;gap:12px;margin-top:14px;font-size:1.0625rem;font-weight:600;color:var(--navy);line-height:1.4}
-.panel-ahora__aviso .icono{margin-top:.12em;color:var(--rojo)}
-.panel-ahora__acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.tarjeta--lista{display:block}
+.tarjeta--lista h2{font-size:1.45rem}
 .tener{padding:22px 24px;border-radius:16px;background:var(--fondo)}
 .tener h3{font-size:1rem}
 .checklist{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px;font-size:.9375rem;line-height:1.45}
 .checklist--2{grid-template-columns:1fr 1fr;gap:10px 24px}
+.checklist--3{grid-template-columns:repeat(3,1fr);gap:12px 28px;margin-top:16px}
 .checklist li{display:flex;align-items:flex-start;gap:10px}
 .checklist .icono{width:1.05em;height:1.05em;margin-top:.15em;color:var(--rojo);stroke-width:3}
 .tener__nota{margin-top:14px;font-size:.9rem;color:var(--gris-2)}
 
-/* Formulario «Si prefieres que te contactemos» */
-.contacto-abrir{margin-top:18px}
-.enlace{display:inline-flex;align-items:center;gap:.4em;padding:0;border:0;background:none;color:var(--azul);font:inherit;font-weight:600;text-align:left;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;cursor:pointer}
-.enlace .icono{width:1.05em;height:1.05em}
-.form-contacto{margin-top:18px;padding-top:18px;border-top:1px solid var(--gris-linea)}
-.form__aviso{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:var(--rojo-tinte);color:var(--navy);font-size:.9rem;line-height:1.45}
-.form__aviso a{color:var(--rojo-osc);font-weight:700}
-.formulario{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
-.campo{display:grid;gap:6px}
-.campo label{font-size:.9375rem;font-weight:600;color:var(--navy)}
-.control{width:100%;height:50px;padding:0 18px;border-radius:999px;border:1.5px solid var(--gris-borde);background:#fff;color:var(--navy);font:inherit;font-size:1rem}
-.control::placeholder{color:#6F7273}
-.control:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 4px rgba(15,66,137,.2)}
-.control[aria-invalid="true"]{border-color:var(--rojo);box-shadow:0 0 0 4px rgba(222,28,42,.12)}
-.tel{display:flex}
-.tel__prefijo{display:flex;align-items:center;padding:0 12px 0 18px;border:1.5px solid var(--gris-borde);border-right:0;border-radius:999px 0 0 999px;background:var(--fondo);color:var(--navy);font-weight:500}
-.tel .control{border-radius:0 999px 999px 0}
-.error{display:flex;align-items:flex-start;gap:6px;color:#B0102A;font-size:.875rem;font-weight:500;line-height:1.4}
-.error .icono{width:1.1em;height:1.1em;margin-top:.1em}
-.consentimiento{display:flex;align-items:flex-start;gap:12px;font-size:.85rem;line-height:1.5}
-.consentimiento input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:var(--azul)}
-.consentimiento a{color:var(--azul);font-weight:600}
-.form__pie{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
-.form__pie p{font-size:.85rem;color:var(--gris-2)}
-.btn[disabled]{opacity:.7;cursor:progress}
-.contacto-resultado{margin-top:18px;padding:16px 18px;border-radius:14px;font-size:.95rem;line-height:1.5}
-.contacto-resultado:focus{outline:none}
-.contacto-resultado--ok{background:#E6F6EE;color:#0B5E35}
-.contacto-resultado--error{background:var(--rojo-tinte);color:var(--navy)}
-.contacto-resultado a{color:inherit;font-weight:700}
-
 /* Secciones y títulos (sin raya roja antes de la ceja) */
 .seccion{padding:116px 0}
-.ceja{margin-bottom:12px;color:var(--azul);font-size:1.0625rem;font-weight:500}
+.ceja{margin-bottom:12px;color:var(--navy);font-size:1.0625rem;font-weight:500}
 .ceja--clara{color:var(--gris-claro)}
 .intro{max-width:620px;margin-top:16px;font-size:1.125rem}
 
 /* Cobertura */
 .cobertura{background:var(--fondo)}
+.solo-celular{display:none}
+@media (min-width:761px){#cobertura{padding:56px 0}}
 .cobertura__in{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
 .cifras-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 26px}
 .cifras-mini div{padding:16px;border-radius:14px;background:#fff;border:1px solid var(--gris-linea)}
@@ -221,8 +191,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 .tipos__btn{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer}
 .tipos__btn:disabled{opacity:.35;cursor:default}
 .tipos__contador{font-size:.9rem;color:rgba(255,255,255,.88)}
-.tipos__pie{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:40px;padding:20px 24px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.92)}
-.tipos__pie p{flex:1 1 320px}
 
 /* Indicadores */
 .indicadores{position:relative;overflow:hidden;padding:84px 0;background:var(--rojo);color:#fff}
@@ -270,14 +238,23 @@ ul,ol{margin:0;padding:0;list-style:none}
 .flota__pendiente{position:relative;z-index:1;display:grid;place-items:center;gap:12px;min-height:280px;margin:0 6%;padding:28px;border:2px dashed var(--gris-100);border-radius:24px;background:rgba(255,255,255,.7);text-align:center;color:var(--gris-2)}
 .flota__pendiente .icono{width:54px;height:54px;color:var(--gris-100)}
 .flota__pendiente strong{display:block;color:var(--navy)}
+.flota__carrusel{display:none}
+.flota__deslizable{display:flex;gap:12px;margin:24px -16px 0;padding:0 16px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none;list-style:none}
+.flota__deslizable::-webkit-scrollbar{display:none}
+.flota__slide{flex:0 0 86%;scroll-snap-align:start;padding:18px 16px;border-radius:18px;background:#fff;border:1px solid var(--gris-linea)}
+.flota__slide img{width:100%;height:170px;object-fit:contain}
+.flota__slide img.flota__foto--estudio{width:100%}
+.flota__slide h3{margin-top:12px;font-size:1.0625rem}
+.flota__slide p{margin-top:2px;font-size:.9rem;color:var(--gris-2)}
+.flota__controles{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.flota__btn{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gris-borde);background:#fff;color:var(--navy);cursor:pointer}
+.flota__btn:disabled{opacity:.35;cursor:default}
+.flota__contador{font-size:.9rem;color:var(--gris-2)}
 .flota__img figcaption{position:relative;z-index:1;margin-top:6px;text-align:center;font-size:.875rem;color:var(--gris-2)}
 
 /* Preguntas frecuentes */
 .faq__in{display:grid;grid-template-columns:4fr 7fr;gap:64px;align-items:start}
 .faq__intro{position:sticky;top:150px}
-.faq__tarjeta{margin-top:30px;padding:24px;border-radius:20px;background:var(--azul);color:#fff}
-.faq__tarjeta p{margin-bottom:16px;color:rgba(255,255,255,.88)}
-.faq__tarjeta strong{display:block;color:#fff;font-size:1.125rem;margin-bottom:4px}
 .acordeon__item{border-bottom:1px solid var(--gris-linea)}
 .acordeon__item:first-child{border-top:1px solid var(--gris-linea)}
 .acordeon__item h3{margin:0;font-size:inherit;letter-spacing:0}
@@ -333,6 +310,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .cobertura__in,.flota__in,.faq__in{grid-template-columns:1fr}
   .faq__intro{position:static}
   .tipos__grid{grid-template-columns:1fr 1fr}
+  .checklist--3{grid-template-columns:1fr 1fr}
   .porque__in{grid-template-columns:1fr;grid-template-areas:"cabeza" "foto" "cuerpo"}
   .porque__foto{margin-top:32px}
   .mapa{max-width:640px;margin:0 auto}
@@ -375,8 +353,12 @@ ul,ol{margin:0;padding:0;list-style:none}
   .solicitud{margin-top:-96px}
   .tarjeta{padding:22px 18px;border-radius:20px}
   .tener{padding:18px}
-  .checklist--2{grid-template-columns:1fr}
-  .panel-ahora__acciones .btn{width:100%}
+  .checklist--2,.checklist--3{grid-template-columns:1fr}
+  .solo-web{display:none}
+  .solo-celular{display:block}
+  .cobertura__cta{margin-top:18px}
+  .js .flota .flota__lista,.js .flota .flota__img{display:none}
+  .js .flota .flota__carrusel{display:block}
   .cifras-mini{gap:8px}
   .cifras-mini div{padding:12px 10px}
   .cifras-mini dt{font-size:1.3rem}

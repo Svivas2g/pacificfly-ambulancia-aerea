@@ -7,7 +7,7 @@
 <meta name="description" content="Ambulancia aérea las 24 horas. Llama a la central y coordinamos el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.">
 <meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 3 (2 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
+<!-- PROTOTIPO DE PROPUESTA, versión 4 (2 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
 <link rel="stylesheet" href="assets/estilos.css">
 <link rel="preload" as="image" href="assets/hero-abordaje.jpg">
 <script>document.documentElement.classList.add('js')</script>
@@ -55,7 +55,6 @@
     <div class="hero__fondo" aria-hidden="true"></div>
     <div class="contenedor">
       <div class="hero__texto">
-        <p class="chip-vivo">Central activa las 24 horas</p>
         <h1 id="titulo-principal">Ambulancia aérea,<br class="solo-escritorio"> cuando cada minuto cuenta.</h1>
         <p class="hero__lead">Llámanos y coordinamos el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.</p>
         <div class="hero__acciones">
@@ -74,68 +73,20 @@
     </div>
   </section>
 
-  <!-- 2. Urgencia: solo "ahora mismo", llamar o escribir -->
+  <!-- 2. Lo que conviene tener preparado antes de comunicarse -->
   <section class="solicitud" aria-labelledby="solicitud-titulo">
     <div class="contenedor">
-      <div class="tarjeta">
-        <div>
-          <p class="tarjeta__tag">Ahora mismo · Urgencia</p>
-          <h2 id="solicitud-titulo">¿Necesitas un traslado ahora?</h2>
-          <p class="panel-ahora__aviso"><svg class="icono"><use href="#i-rayo"/></svg>Para una urgencia, llamar es más rápido que cualquier formulario.</p>
-          <div class="panel-ahora__acciones">
-            <a class="btn btn--llamar btn--xl" href="tel:+573013373413"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la central</span><small>+57 301 337 3413</small></span></a>
-            <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>WhatsApp</a>
-          </div>
-          <p class="contacto-abrir"><button type="button" class="enlace" id="btn-contacto" aria-expanded="false" aria-controls="form-contacto">Si prefieres que te contactemos, déjanos tus datos<svg class="icono"><use href="#i-flecha"/></svg></button></p>
-          <form class="form-contacto" id="form-contacto" action="https://formsubmit.co/info@pacificflycol.com" method="POST" data-envio="https://formsubmit.co/ajax/info@pacificflycol.com" novalidate hidden>
-            <p class="form__aviso"><svg class="icono"><use href="#i-rayo"/></svg><span>Si el paciente necesita salir ya, no esperes: <a href="tel:+573013373413">llama a la central</a>.</span></p>
-            <input type="hidden" name="_subject" value="Ambulancia aérea: solicitud de contacto desde la página web">
-            <input type="hidden" name="_template" value="table">
-            <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="formulario">
-              <div class="campo">
-                <label for="c-nombre">Tu nombre</label>
-                <input class="control" id="c-nombre" name="Nombre" autocomplete="name" aria-describedby="c-nombre-error">
-                <p class="error" id="c-nombre-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
-              </div>
-              <div class="campo">
-                <label for="c-telefono">Teléfono o WhatsApp</label>
-                <div class="tel"><span class="tel__prefijo" aria-hidden="true">+57</span><input class="control" id="c-telefono" name="Teléfono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="301 337 3413" aria-describedby="c-telefono-error"></div>
-                <p class="error" id="c-telefono-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
-              </div>
-              <div class="campo">
-                <label for="c-ubicacion">¿Dónde está el paciente?</label>
-                <input class="control" id="c-ubicacion" name="Dónde está el paciente" autocomplete="off" placeholder="Ciudad y clínica" aria-describedby="c-ubicacion-error">
-                <p class="error" id="c-ubicacion-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
-              </div>
-              <div class="consentimiento">
-                <input type="checkbox" id="c-datos" name="Autorizó el tratamiento de datos" value="Sí" aria-describedby="c-datos-error">
-                <div>
-                  <label for="c-datos">Autorizo a PacificFly a usar estos datos para contactarme, según la <a href="#">Política de tratamiento de datos</a>.</label>
-                  <p class="error" id="c-datos-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
-                </div>
-              </div>
-              <div class="form__pie">
-                <button class="btn btn--llamar" type="submit"><span>Enviar mis datos</span><svg class="icono"><use href="#i-flecha"/></svg></button>
-                <p>Tus datos llegan a info@pacificflycol.com.</p>
-              </div>
-            </div>
-          </form>
-          <p class="contacto-resultado contacto-resultado--ok" id="contacto-ok" role="status" tabindex="-1" hidden>Recibimos tus datos. Un coordinador te contactará al <strong class="contacto-tel"></strong>. Si el paciente empeora, no esperes: <a href="tel:+573013373413">llama a la central, +57 301 337 3413</a>.</p>
-          <p class="contacto-resultado contacto-resultado--error" id="contacto-error" role="alert" tabindex="-1" hidden>No pudimos enviar tus datos. Tus datos siguen en el formulario; intenta de nuevo o <a href="tel:+573013373413">llama a la central, +57 301 337 3413</a>.</p>
-        </div>
-        <div class="tener">
-          <h3>Mientras marcas, ten a la mano</h3>
-          <ul class="checklist checklist--2">
-            <li><svg class="icono"><use href="#i-check"/></svg>Dónde está el paciente: ciudad y clínica</li>
-            <li><svg class="icono"><use href="#i-check"/></svg>Diagnóstico y estado actual</li>
-            <li><svg class="icono"><use href="#i-check"/></svg>Si necesita oxígeno, ventilador o incubadora</li>
-            <li><svg class="icono"><use href="#i-check"/></svg>Clínica de destino y si ya aceptó al paciente</li>
-            <li><svg class="icono"><use href="#i-check"/></svg>Documento del paciente y su EPS o aseguradora</li>
-            <li><svg class="icono"><use href="#i-check"/></svg>Quién viaja como acompañante: nombre y documento</li>
-          </ul>
-          <p class="tener__nota">¿Te falta algún dato? Llama igual: el coordinador te guía.</p>
-        </div>
+      <div class="tarjeta tarjeta--lista">
+        <h2 id="solicitud-titulo">Mientras marcas, ten a la mano</h2>
+        <ul class="checklist checklist--3">
+          <li><svg class="icono"><use href="#i-check"/></svg>Dónde está el paciente: ciudad y clínica</li>
+          <li><svg class="icono"><use href="#i-check"/></svg>Diagnóstico y estado actual</li>
+          <li><svg class="icono"><use href="#i-check"/></svg>Si necesita oxígeno, ventilador o incubadora</li>
+          <li><svg class="icono"><use href="#i-check"/></svg>Clínica de destino y si ya aceptó al paciente</li>
+          <li><svg class="icono"><use href="#i-check"/></svg>Documento del paciente y su EPS o aseguradora</li>
+          <li><svg class="icono"><use href="#i-check"/></svg>Quién viaja como acompañante: nombre y documento</li>
+        </ul>
+        <p class="tener__nota">¿Te falta algún dato? Llama igual: el coordinador te guía.</p>
       </div>
     </div>
   </section>
@@ -146,8 +97,9 @@
       <div class="revelar">
         <p class="ceja">Nuestra cobertura</p>
         <h2 id="cobertura-titulo">Volamos donde la carretera no llega</h2>
-        <p class="intro">Llegamos a toda Colombia. Nuestra operación más fuerte está en el suroccidente y la costa Pacífica, donde muchos municipios no tienen carretera. Desde allí conectamos a tu paciente con la ciudad donde está la atención que necesita.</p>
-        <dl class="cifras-mini">
+        <p class="intro solo-web">Llegamos a toda Colombia. Nuestra operación más fuerte está en el suroccidente y la costa Pacífica, donde muchos municipios no tienen carretera. Desde allí conectamos a tu paciente con la ciudad donde está la atención que necesita.</p>
+        <p class="intro solo-celular">Operamos en toda Colombia, con presencia estratégica en el suroccidente y la costa Pacífica. Conectamos territorios de difícil acceso con la atención médica que cada paciente necesita.</p>
+        <dl class="cifras-mini solo-web">
           <div><dt>Nacional</dt><dd>cobertura en toda Colombia</dd></div>
           <div><dt>4</dt><dd>bases de operación</dd></div>
           <div><dt>24/7</dt><dd>central de coordinación</dd></div>
@@ -211,10 +163,6 @@
           <span class="tipos__contador" aria-live="polite">1 de 8</span>
           <button class="tipos__btn" type="button" data-dir="1" aria-label="Ver el tipo siguiente"><svg class="icono"><use href="#i-flecha"/></svg></button>
         </div>
-      </div>
-      <div class="tipos__pie revelar">
-        <p>¿El caso de tu paciente no está aquí? Llama a la central y lo evaluamos contigo.</p>
-        <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Consultar mi caso</a>
       </div>
     </div>
   </section>
@@ -288,11 +236,6 @@
       <div class="faq__intro revelar">
         <p class="ceja">Preguntas frecuentes</p>
         <h2 id="faq-titulo">Lo que más nos preguntan las familias y las clínicas</h2>
-        <div class="faq__tarjeta oscuro">
-          <strong>¿Tienes una duda urgente?</strong>
-          <p>No la busques aquí: un coordinador te la responde por teléfono.</p>
-          <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Llamar a la central 24 h</a>
-        </div>
       </div>
       <div class="acordeon revelar">
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="true" aria-controls="r1" id="p1"><span class="acordeon__num">01</span><span class="acordeon__txt">¿Qué necesito para solicitar un traslado?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
