@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Taxi aéreo | PacificFly</title>
 <meta name="description" content="Vuelos privados en taxi aéreo a la medida de tu agenda. Cuéntanos la ruta, la fecha y cuántos viajan, y te proponemos la aeronave y el itinerario.">
-<meta name="theme-color" content="#071C42">
+<meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 2 (2 de octubre de 2026). Textos en borrador por validar con Pacific. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- PROTOTIPO DE PROPUESTA, versión 3 (2 de octubre de 2026). Textos en borrador por validar con Pacific. -->
 <link rel="stylesheet" href="assets/estilos.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -106,6 +103,7 @@
       </div>
       <div class="pasos revelar">
         <div class="pasos__ruta" aria-hidden="true"><svg class="pasos__avion"><use href="#i-avion"/></svg></div>
+        <div class="pasos__progreso" aria-hidden="true"></div>
         <ol class="pasos__lista">
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Nos cuentas tu ruta</h3><p>Origen, destino, fecha y cuántas personas viajan.</p></li>
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-ruta"/></svg></span><span class="paso__num">PASO 2</span><h3>Te proponemos el vuelo</h3><p>La aeronave, el itinerario y el valor, con todos los detalles operativos.</p></li>
@@ -125,8 +123,8 @@
         <p class="intro">Aviones bimotores para trayectos regionales y nacionales. Te recomendamos el que mejor se ajuste a la ruta, los pasajeros y el equipaje.</p>
         <div class="flota__lista" role="tablist" aria-label="Aeronaves de la flota">
           <button class="flota__tab" type="button" role="tab" id="tab-c90" aria-selected="true" aria-controls="flota-panel" data-imagen="assets/king-air-c90.webp" data-alt="Beechcraft King Air C90 de PacificFly en plataforma" data-marca="C90" data-nombre="Beechcraft King Air C90"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Beechcraft King Air C90</strong><small>Turbohélice bimotor, cabina presurizada</small></span></button>
-          <button class="flota__tab" type="button" role="tab" id="tab-seneca4" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="" data-marca="IV" data-nombre="Piper PA-34 Seneca IV"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca IV</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
-          <button class="flota__tab" type="button" role="tab" id="tab-seneca2" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="" data-marca="II" data-nombre="Piper PA-34 Seneca II"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca II</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
+          <button class="flota__tab" type="button" role="tab" id="tab-seneca4" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="assets/seneca-iv.webp" data-alt="Piper PA-34 Seneca IV de PacificFly en plataforma" data-marca="IV" data-nombre="Piper PA-34 Seneca IV"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca IV</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
+          <button class="flota__tab" type="button" role="tab" id="tab-seneca2" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="assets/seneca-ii.jpg" data-estudio="si" data-alt="Piper PA-34 Seneca II de PacificFly, matrícula HK-5011" data-marca="II" data-nombre="Piper PA-34 Seneca II"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca II</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
         </div>
       </div>
       <figure class="flota__img revelar" id="flota-panel" role="tabpanel" aria-labelledby="tab-c90" data-marca="C90">
@@ -159,18 +157,18 @@
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r4" id="p4"><span class="acordeon__num">04</span><span class="acordeon__txt">¿Es seguro volar con PacificFly?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
           <div class="acordeon__panel" id="r4" role="region" aria-labelledby="p4" hidden><p>Operamos con aeronaves bimotores, con el mantenimiento al día y tripulaciones entrenadas. Antes de cada vuelo revisamos la ruta, el clima y la pista de destino.</p></div></div>
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r5" id="p5"><span class="acordeon__num">05</span><span class="acordeon__txt">¿Desde dónde operan?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
-          <div class="acordeon__panel" id="r5" role="region" aria-labelledby="p5" hidden><p>Nuestra base principal está en el hangar 52B del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
+          <div class="acordeon__panel" id="r5" role="region" aria-labelledby="p5" hidden><p>Nuestra base principal está en el hangar 39 del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="final oscuro" aria-labelledby="final-titulo">
+  <section class="final" aria-labelledby="final-titulo">
     <div class="contenedor revelar">
       <h2 id="final-titulo">¿Listo para volar?</h2>
       <p>Cuéntanos tu ruta y te enviamos la propuesta.</p>
       <div class="final__acciones">
         <a class="btn btn--llamar btn--xl" href="tel:+573114099465"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la línea comercial</span><small>+57 311 409 9465</small></span></a>
-        <a class="btn btn--wa btn--xl" href="https://wa.me/573114099465?text=Hola%2C%20quiero%20cotizar%20un%20vuelo%20en%20taxi%20a%C3%A9reo." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+        <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573114099465?text=Hola%2C%20quiero%20cotizar%20un%20vuelo%20en%20taxi%20a%C3%A9reo." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
       </div>
       <p class="final__nota">¿Es una urgencia médica? Llama a la central de ambulancia aérea: <a href="tel:+573013373413">+57 301 337 3413</a></p>
     </div>
@@ -198,7 +196,7 @@
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Central de ambulancia aérea 24 h</span><a class="pie__tel" href="tel:+573013373413">+57 301 337 3413</a></span></li>
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Línea comercial</span><a class="pie__tel" href="tel:+573114099465">+57 311 409 9465</a></span></li>
           <li><svg class="icono"><use href="#i-correo"/></svg><a href="mailto:info@pacificflycol.com">info@pacificflycol.com</a></li>
-          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 52B, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
+          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 39, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
         </ul>
       </div>
       <div>
@@ -206,7 +204,6 @@
         <div class="redes">
           <a href="#" aria-label="PacificFly en Facebook"><svg class="icono"><use href="#i-fb"/></svg></a>
           <a href="#" aria-label="PacificFly en Instagram"><svg class="icono"><use href="#i-ig"/></svg></a>
-          <a href="#" aria-label="PacificFly en LinkedIn"><svg class="icono"><use href="#i-in"/></svg></a>
         </div>
       </div>
     </div>

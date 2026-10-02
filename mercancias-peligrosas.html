@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Transporte de mercancías peligrosas | PacificFly</title>
 <meta name="description" content="Transporte aéreo de mercancías peligrosas, con la revisión documental, el embalaje y el personal que exige la regulación aeronáutica.">
-<meta name="theme-color" content="#071C42">
+<meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 2 (2 de octubre de 2026). Textos en borrador por validar con Pacific. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- PROTOTIPO DE PROPUESTA, versión 3 (2 de octubre de 2026). Textos en borrador por validar con Pacific. -->
 <link rel="stylesheet" href="assets/estilos.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -106,6 +103,7 @@
       </div>
       <div class="pasos revelar">
         <div class="pasos__ruta" aria-hidden="true"><svg class="pasos__avion"><use href="#i-avion"/></svg></div>
+        <div class="pasos__progreso" aria-hidden="true"></div>
         <ol class="pasos__lista">
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Nos cuentas qué enviar</h3><p>El producto, la cantidad, el origen y el destino.</p></li>
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-documento"/></svg></span><span class="paso__num">PASO 2</span><h3>Revisamos la documentación</h3><p>La clasificación, el embalaje y los documentos que exige el transporte aéreo.</p></li>
@@ -134,18 +132,18 @@
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r2" id="p2"><span class="acordeon__num">02</span><span class="acordeon__txt">¿Qué documentos necesito?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
           <div class="acordeon__panel" id="r2" role="region" aria-labelledby="p2" hidden><p>La hoja de datos de seguridad del producto y su clasificación: número ONU, clase y cantidad. Según la carga, te indicamos el resto de documentos y el embalaje que exige el transporte aéreo.</p></div></div>
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r3" id="p3"><span class="acordeon__num">03</span><span class="acordeon__txt">¿Desde dónde operan?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
-          <div class="acordeon__panel" id="r3" role="region" aria-labelledby="p3" hidden><p>Nuestra base principal está en el hangar 52B del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
+          <div class="acordeon__panel" id="r3" role="region" aria-labelledby="p3" hidden><p>Nuestra base principal está en el hangar 39 del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="final oscuro" aria-labelledby="final-titulo">
+  <section class="final" aria-labelledby="final-titulo">
     <div class="contenedor revelar">
       <h2 id="final-titulo">¿Tienes una carga especial por enviar?</h2>
       <p>Cuéntanos qué es, cuánto pesa y a dónde va.</p>
       <div class="final__acciones">
         <a class="btn btn--llamar btn--xl" href="tel:+573114099465"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la línea comercial</span><small>+57 311 409 9465</small></span></a>
-        <a class="btn btn--wa btn--xl" href="https://wa.me/573114099465?text=Hola%2C%20quiero%20cotizar%20el%20transporte%20de%20una%20mercanc%C3%ADa%20peligrosa." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+        <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573114099465?text=Hola%2C%20quiero%20cotizar%20el%20transporte%20de%20una%20mercanc%C3%ADa%20peligrosa." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
       </div>
       <p class="final__nota">¿Es una urgencia médica? Llama a la central de ambulancia aérea: <a href="tel:+573013373413">+57 301 337 3413</a></p>
     </div>
@@ -173,7 +171,7 @@
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Central de ambulancia aérea 24 h</span><a class="pie__tel" href="tel:+573013373413">+57 301 337 3413</a></span></li>
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Línea comercial</span><a class="pie__tel" href="tel:+573114099465">+57 311 409 9465</a></span></li>
           <li><svg class="icono"><use href="#i-correo"/></svg><a href="mailto:info@pacificflycol.com">info@pacificflycol.com</a></li>
-          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 52B, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
+          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 39, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
         </ul>
       </div>
       <div>
@@ -181,7 +179,6 @@
         <div class="redes">
           <a href="#" aria-label="PacificFly en Facebook"><svg class="icono"><use href="#i-fb"/></svg></a>
           <a href="#" aria-label="PacificFly en Instagram"><svg class="icono"><use href="#i-ig"/></svg></a>
-          <a href="#" aria-label="PacificFly en LinkedIn"><svg class="icono"><use href="#i-in"/></svg></a>
         </div>
       </div>
     </div>

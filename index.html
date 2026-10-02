@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ambulancia aérea 24 horas | PacificFly</title>
 <meta name="description" content="Ambulancia aérea las 24 horas. Llama a la central y coordinamos el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.">
-<meta name="theme-color" content="#071C42">
+<meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 2 (2 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- PROTOTIPO DE PROPUESTA, versión 3 (2 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
 <link rel="stylesheet" href="assets/estilos.css">
 <link rel="preload" as="image" href="assets/hero-abordaje.jpg">
 <script>document.documentElement.classList.add('js')</script>
@@ -75,14 +72,6 @@
         </ul>
       </div>
     </div>
-    <svg class="linea-vida" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="lv-grad" x1="560" y1="0" x2="1380" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity=".95"/></linearGradient>
-      </defs>
-      <path class="lv-ecg" pathLength="1" d="M0 80 H300 C310 80 314 67 323 67 C332 67 336 80 346 80 H362 L370 80 L378 92 L394 14 L410 106 L418 80 H442 C454 80 460 63 474 63 C488 63 494 80 506 80 H560"/>
-      <path class="lv-ruta" pathLength="100" d="M560 80 C760 80 900 72 1060 54 S1300 24 1372 20"/>
-      <g class="lv-avion" transform="translate(1394 17) rotate(-5)" fill="#fff"><use href="#i-avion" x="-15" y="-15" width="30" height="30" transform="rotate(90)"/></g>
-    </svg>
   </section>
 
   <!-- 2. Urgencia: solo "ahora mismo", llamar o escribir -->
@@ -97,6 +86,43 @@
             <a class="btn btn--llamar btn--xl" href="tel:+573013373413"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la central</span><small>+57 301 337 3413</small></span></a>
             <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>WhatsApp</a>
           </div>
+          <p class="contacto-abrir"><button type="button" class="enlace" id="btn-contacto" aria-expanded="false" aria-controls="form-contacto">Si prefieres que te contactemos, déjanos tus datos<svg class="icono"><use href="#i-flecha"/></svg></button></p>
+          <form class="form-contacto" id="form-contacto" action="https://formsubmit.co/info@pacificflycol.com" method="POST" data-envio="https://formsubmit.co/ajax/info@pacificflycol.com" novalidate hidden>
+            <p class="form__aviso"><svg class="icono"><use href="#i-rayo"/></svg><span>Si el paciente necesita salir ya, no esperes: <a href="tel:+573013373413">llama a la central</a>.</span></p>
+            <input type="hidden" name="_subject" value="Ambulancia aérea: solicitud de contacto desde la página web">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="formulario">
+              <div class="campo">
+                <label for="c-nombre">Tu nombre</label>
+                <input class="control" id="c-nombre" name="Nombre" autocomplete="name" aria-describedby="c-nombre-error">
+                <p class="error" id="c-nombre-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo">
+                <label for="c-telefono">Teléfono o WhatsApp</label>
+                <div class="tel"><span class="tel__prefijo" aria-hidden="true">+57</span><input class="control" id="c-telefono" name="Teléfono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="301 337 3413" aria-describedby="c-telefono-error"></div>
+                <p class="error" id="c-telefono-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo">
+                <label for="c-ubicacion">¿Dónde está el paciente?</label>
+                <input class="control" id="c-ubicacion" name="Dónde está el paciente" autocomplete="off" placeholder="Ciudad y clínica" aria-describedby="c-ubicacion-error">
+                <p class="error" id="c-ubicacion-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="consentimiento">
+                <input type="checkbox" id="c-datos" name="Autorizó el tratamiento de datos" value="Sí" aria-describedby="c-datos-error">
+                <div>
+                  <label for="c-datos">Autorizo a PacificFly a usar estos datos para contactarme, según la <a href="#">Política de tratamiento de datos</a>.</label>
+                  <p class="error" id="c-datos-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+                </div>
+              </div>
+              <div class="form__pie">
+                <button class="btn btn--llamar" type="submit"><span>Enviar mis datos</span><svg class="icono"><use href="#i-flecha"/></svg></button>
+                <p>Tus datos llegan a info@pacificflycol.com.</p>
+              </div>
+            </div>
+          </form>
+          <p class="contacto-resultado contacto-resultado--ok" id="contacto-ok" role="status" tabindex="-1" hidden>Recibimos tus datos. Un coordinador te contactará al <strong class="contacto-tel"></strong>. Si el paciente empeora, no esperes: <a href="tel:+573013373413">llama a la central, +57 301 337 3413</a>.</p>
+          <p class="contacto-resultado contacto-resultado--error" id="contacto-error" role="alert" tabindex="-1" hidden>No pudimos enviar tus datos. Tus datos siguen en el formulario; intenta de nuevo o <a href="tel:+573013373413">llama a la central, +57 301 337 3413</a>.</p>
         </div>
         <div class="tener">
           <h3>Mientras marcas, ten a la mano</h3>
@@ -129,9 +155,9 @@
         <p class="cobertura__cta">¿Tu paciente está en otro lugar? <a href="tel:+573013373413">Llámanos</a>: buscamos la pista más cercana y coordinamos el traslado en tierra.</p>
       </div>
       <figure class="mapa" id="mapa">
-        <svg id="mapa-svg" role="img" aria-labelledby="mapa-desc"><desc id="mapa-desc">Mapa de Colombia: cobertura en todo el país, la operación más fuerte en el suroccidente y la costa Pacífica, la base principal en Cali y rutas hacia distintas ciudades.</desc></svg>
+        <svg id="mapa-svg" role="img" aria-labelledby="mapa-desc"><desc id="mapa-desc">Mapa de Colombia: cobertura en todo el país, en rojo los departamentos de operación más fuerte (suroccidente, costa Pacífica, Santander, Caquetá y Arauca), la base principal en Cali y rutas hacia distintas ciudades.</desc></svg>
         <figcaption class="leyenda">
-          <span><i class="muestra" style="background:var(--azul-cobertura)"></i>Cobertura nacional</span>
+          <span><i class="muestra" style="background:var(--gris-mapa)"></i>Cobertura nacional</span>
           <span><i class="muestra" style="background:var(--rojo)"></i>Operación más fuerte</span>
           <span><i class="muestra muestra--base"></i>Base principal</span>
           <span><i class="muestra muestra--linea"></i>Rutas frecuentes</span>
@@ -149,6 +175,7 @@
       </div>
       <div class="pasos revelar">
         <div class="pasos__ruta" aria-hidden="true"><svg class="pasos__avion"><use href="#i-avion"/></svg></div>
+        <div class="pasos__progreso" aria-hidden="true"></div>
         <ol class="pasos__lista">
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Llamas a la central</h3><p>Te atiende un coordinador, de día o de noche, y toma los datos del paciente.</p></li>
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><span class="paso__num">PASO 2</span><h3>El equipo médico revisa el caso</h3><p>Con el diagnóstico y el estado del paciente se define la aeronave y quién viaja a bordo.</p></li>
@@ -205,30 +232,32 @@
     </div>
   </section>
 
-  <!-- 7. Por qué PacificFly: foto completa, sin recortar a la tripulación -->
+  <!-- 7. Por qué PacificFly: en escritorio, foto a la izquierda y promesas a la derecha; en celular se apila -->
   <section class="seccion" id="nosotros" aria-labelledby="porque-titulo">
-    <div class="contenedor">
-      <div class="revelar">
+    <div class="contenedor porque__in">
+      <div class="porque__cabeza revelar">
         <p class="ceja">Por qué PacificFly</p>
         <h2 id="porque-titulo">En manos expertas, en el aire y en tierra</h2>
       </div>
       <figure class="porque__foto revelar">
-        <img src="assets/tripulacion.jpg" alt="Tres pilotos de PacificFly con uniforme, frente a una de las aeronaves" loading="lazy" width="1203" height="537">
+        <img src="assets/tripulacion.jpg" alt="Tres pilotos de PacificFly con uniforme, frente a una de las aeronaves" loading="lazy" width="1500" height="1000">
         <figcaption class="porque__sello">
           <span class="icono-caja"><svg class="icono"><use href="#i-pulso"/></svg></span>
           <span class="sello__txt"><strong>Médico y paramédico a bordo</strong><span>en cada traslado de ambulancia aérea</span></span>
         </figcaption>
       </figure>
-      <ul class="razones revelar">
-        <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-reloj"/></svg></span><h3>Disponibles 24/7</h3><p>De día o de noche, te atiende una persona, con calma y con respuestas.</p></li>
-        <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-rayo"/></svg></span><h3>Respuesta rápida</h3><p>Activamos el traslado en cuanto confirmamos el caso, sin importar la hora.</p></li>
-        <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><h3>Equipo médico especializado</h3><p>Médicos y paramédicos con entrenamiento en traslado aéreo acompañan al paciente todo el vuelo.</p></li>
-        <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-monitor"/></svg></span><h3>Equipamiento completo</h3><p>Monitoreo, oxígeno y soporte vital durante todo el trayecto.</p></li>
-      </ul>
-      <ul class="credenciales">
-        <li><svg class="icono"><use href="#i-escudo"/></svg>Servicio de salud habilitado (REPS)</li>
-        <li><svg class="icono"><use href="#i-avion"/></svg>Operador certificado por la Aerocivil</li>
-      </ul>
+      <div class="porque__cuerpo revelar">
+        <ul class="razones">
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-reloj"/></svg></span><h3>Disponibles 24/7</h3><p>De día o de noche, te atiende una persona, con calma y con respuestas.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-rayo"/></svg></span><h3>Respuesta rápida</h3><p>Activamos el traslado en cuanto confirmamos el caso, sin importar la hora.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><h3>Equipo médico especializado</h3><p>Médicos y paramédicos con entrenamiento en traslado aéreo acompañan al paciente todo el vuelo.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-monitor"/></svg></span><h3>Equipamiento completo</h3><p>Monitoreo, oxígeno y soporte vital durante todo el trayecto.</p></li>
+        </ul>
+        <ul class="credenciales">
+          <li><svg class="icono"><use href="#i-escudo"/></svg>Servicio de salud habilitado (REPS)</li>
+          <li><svg class="icono"><use href="#i-avion"/></svg>Operador certificado por la Aerocivil</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -241,8 +270,8 @@
         <p class="intro">Aviones bimotores configurados como ambulancia aérea. El coordinador asigna la aeronave según el estado del paciente, la ruta y la pista de destino.</p>
         <div class="flota__lista" role="tablist" aria-label="Aeronaves de la flota">
           <button class="flota__tab" type="button" role="tab" id="tab-c90" aria-selected="true" aria-controls="flota-panel" data-imagen="assets/king-air-c90.webp" data-alt="Beechcraft King Air C90 de PacificFly en plataforma" data-marca="C90" data-nombre="Beechcraft King Air C90"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Beechcraft King Air C90</strong><small>Turbohélice bimotor, cabina presurizada</small></span></button>
-          <button class="flota__tab" type="button" role="tab" id="tab-seneca4" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="" data-marca="IV" data-nombre="Piper PA-34 Seneca IV"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca IV</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
-          <button class="flota__tab" type="button" role="tab" id="tab-seneca2" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="" data-marca="II" data-nombre="Piper PA-34 Seneca II"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca II</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
+          <button class="flota__tab" type="button" role="tab" id="tab-seneca4" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="assets/seneca-iv.webp" data-alt="Piper PA-34 Seneca IV de PacificFly en plataforma" data-marca="IV" data-nombre="Piper PA-34 Seneca IV"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca IV</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
+          <button class="flota__tab" type="button" role="tab" id="tab-seneca2" aria-selected="false" tabindex="-1" aria-controls="flota-panel" data-imagen="assets/seneca-ii.jpg" data-estudio="si" data-alt="Piper PA-34 Seneca II de PacificFly, matrícula HK-5011" data-marca="II" data-nombre="Piper PA-34 Seneca II"><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><span><strong>Piper PA-34 Seneca II</strong><small>Bimotor de pistón, trayectos regionales</small></span></button>
         </div>
       </div>
       <figure class="flota__img revelar" id="flota-panel" role="tabpanel" aria-labelledby="tab-c90" data-marca="C90">
@@ -277,20 +306,20 @@
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r5" id="p5"><span class="acordeon__num">05</span><span class="acordeon__txt">¿La EPS o el seguro cubren el traslado?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
           <div class="acordeon__panel" id="r5" role="region" aria-labelledby="p5" hidden><p>Depende del plan y de la autorización de la EPS o de la aseguradora. Atendemos traslados autorizados por EPS y aseguradoras, y también traslados particulares. El coordinador te orienta sobre el trámite.</p></div></div>
         <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r6" id="p6"><span class="acordeon__num">06</span><span class="acordeon__txt">¿Desde dónde operan?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
-          <div class="acordeon__panel" id="r6" role="region" aria-labelledby="p6" hidden><p>Nuestra base principal está en el hangar 52B del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
+          <div class="acordeon__panel" id="r6" role="region" aria-labelledby="p6" hidden><p>Nuestra base principal está en el hangar 39 del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a toda Colombia.</p></div></div>
       </div>
     </div>
   </section>
 
   <!-- 10. Llamado final -->
-  <section class="final oscuro" aria-labelledby="final-titulo">
+  <section class="final" aria-labelledby="final-titulo">
     <div class="contenedor revelar">
       <h2 id="final-titulo">¿Tienes un paciente que necesita traslado?</h2>
       <p>Llama ahora. Te atendemos las 24 horas, todos los días del año.</p>
       <div class="final__acciones">
         <svg class="final__linea" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 60 H180 C190 60 194 48 203 48 C212 48 216 60 226 60 H242 L250 60 L258 72 L274 4 L290 112 L298 60 H322 C334 60 340 44 354 44 C368 44 374 60 386 60 H1060 C1070 60 1074 48 1083 48 C1092 48 1096 60 1106 60 H1122 L1130 60 L1138 72 L1154 4 L1170 112 L1178 60 H1202 C1214 60 1220 44 1234 44 C1248 44 1254 60 1266 60 H1440" fill="none" stroke="#DE1C2A" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
         <a class="btn btn--llamar btn--xl" href="tel:+573013373413"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la central 24 h</span><small>+57 301 337 3413</small></span></a>
-        <a class="btn btn--wa btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+        <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -317,7 +346,7 @@
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Central de ambulancia aérea 24 h</span><a class="pie__tel" href="tel:+573013373413">+57 301 337 3413</a></span></li>
           <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Línea comercial</span><a class="pie__tel" href="tel:+573114099465">+57 311 409 9465</a></span></li>
           <li><svg class="icono"><use href="#i-correo"/></svg><a href="mailto:info@pacificflycol.com">info@pacificflycol.com</a></li>
-          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 52B, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
+          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 39, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
         </ul>
       </div>
       <div>
@@ -325,7 +354,6 @@
         <div class="redes">
           <a href="#" aria-label="PacificFly en Facebook"><svg class="icono"><use href="#i-fb"/></svg></a>
           <a href="#" aria-label="PacificFly en Instagram"><svg class="icono"><use href="#i-ig"/></svg></a>
-          <a href="#" aria-label="PacificFly en LinkedIn"><svg class="icono"><use href="#i-in"/></svg></a>
         </div>
       </div>
     </div>
