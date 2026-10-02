@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ambulancia aérea 24 horas | PacificFly</title>
+<meta name="description" content="Ambulancia aérea las 24 horas. Llama a la central y coordinamos el avión, el equipo médico a bordo y el traslado de clínica a clínica.">
+<meta name="theme-color" content="#0B1F45">
+<meta name="robots" content="noindex, nofollow">
+<!-- PROTOTIPO DE PROPUESTA (1 de octubre de 2026). No envía datos. Textos y cifras: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-abordaje.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --rojo:#E61E35; --rojo-osc:#C41429; --rojo-tinte:#FFF0F2;
+  --azul:#254A93; --azul-osc:#12306A; --navy:#0B1F45;
+  --azul-50:#EEF2FA; --azul-100:#DCE4F3; --azul-claro:#AFC3EC;
+  --gris:#57595A; --gris-2:#646668; --gris-borde:#8A8C8D; --gris-linea:#E3E6EC; --fondo:#F4F6FA;
+  --verde-vivo:#3EE08F; --verde-wa:#128C4A;
+  --sombra:0 1px 2px rgba(11,31,69,.06),0 10px 30px rgba(11,31,69,.10);
+  --sombra-alta:0 2px 6px rgba(11,31,69,.08),0 28px 64px rgba(11,31,69,.20);
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:96px}
+body{margin:0;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--gris);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{color:var(--navy);margin:0;font-weight:600;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(1.9rem,3.4vw,2.85rem)}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.contenedor{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.icono{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icono--relleno{fill:currentColor;stroke:none}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:8px}
+.oscuro :focus-visible{outline-color:#fff}
+.saltar{position:absolute;left:16px;top:-80px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;z-index:100;text-decoration:none;font-weight:600}
+.saltar:focus{top:12px}
+.aviso-prototipo{margin:0;padding:7px 16px;background:#2B2D30;color:#fff;font-size:.8125rem;line-height:1.4;text-align:center}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:52px;padding:.7em 1.35em;border-radius:12px;border:2px solid transparent;font:inherit;font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+.btn:active{transform:translateY(1px)}
+.btn .icono{width:1.3em;height:1.3em}
+.btn--llamar{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(230,30,53,.75)}
+.btn--llamar:hover{background:var(--rojo-osc)}
+.btn--llamar .timbre{position:relative;display:grid;place-items:center;width:2.1em;height:2.1em;border-radius:50%;background:rgba(0,0,0,.16)}
+.btn--llamar .timbre::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #fff;opacity:0;animation:onda 2.2s ease-out infinite}
+.btn__txt{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px}
+.btn__txt small{font-size:.85rem;font-weight:500;letter-spacing:.02em}
+.btn--xl{min-height:66px;padding:.7em 1.5em .7em .9em;font-size:1.0625rem}
+.btn--wa{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.6)}
+.btn--wa:hover{background:rgba(255,255,255,.15)}
+.btn--wa-claro{background:#fff;color:var(--navy);border-color:var(--gris-borde)}
+.btn--wa-claro:hover{border-color:var(--navy)}
+.btn--wa-claro .icono{color:var(--verde-wa)}
+.btn--secundario{background:#fff;color:var(--navy);border-color:var(--gris-borde)}
+.btn--secundario:hover{border-color:var(--navy)}
+.enlace{display:inline-flex;align-items:center;gap:.4em;background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--azul);cursor:pointer;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.enlace .icono{width:1.05em;height:1.05em}
+
+/* Pulso "en vivo" */
+.pulso{position:relative;display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;flex:none}
+.pulso::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid currentColor;opacity:0;animation:onda 2s ease-out infinite}
+@keyframes onda{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+
+/* Barra de urgencia */
+.barra-urgencia{background:var(--rojo);color:#fff;font-size:.9375rem}
+.barra-urgencia__in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px}
+.barra-urgencia__txt{display:flex;align-items:center;gap:12px}
+.barra-urgencia__tel{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;background:rgba(0,0,0,.18);font-weight:700;text-decoration:none;white-space:nowrap;letter-spacing:.01em}
+.barra-urgencia__tel:hover{background:rgba(0,0,0,.28)}
+.barra-urgencia :focus-visible{outline-color:#fff}
+.barra-urgencia .corto{display:none}
+
+/* Cabecera */
+.cabecera{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:box-shadow .25s,border-color .25s}
+.cabecera.con-sombra{box-shadow:0 8px 28px -14px rgba(11,31,69,.35);border-color:var(--gris-linea)}
+.cabecera__in{display:flex;align-items:center;gap:20px;min-height:78px}
+.logo{display:block;flex:none}
+.logo img{height:44px;width:auto}
+.nav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.nav a{padding:10px 12px;border-radius:8px;color:var(--gris);font-size:.9375rem;font-weight:500;text-decoration:none;transition:color .15s,background-color .15s}
+.nav a:hover{color:var(--navy);background:var(--azul-50)}
+.nav a[aria-current="page"]{color:var(--rojo);font-weight:600}
+.cabecera__llamar{min-height:48px;padding:.55em 1.1em;margin-left:10px;font-size:.9375rem}
+.icono-btn{display:none;width:46px;height:46px;border-radius:12px;align-items:center;justify-content:center;border:1.5px solid var(--gris-linea);background:#fff;color:var(--navy);cursor:pointer}
+.icono-btn--rojo{background:var(--rojo);border-color:var(--rojo);color:#fff}
+.menu-movil{border-top:1px solid var(--gris-linea);background:#fff;padding:8px 0 16px}
+.menu-movil a{display:block;padding:14px 4px;border-bottom:1px solid var(--gris-linea);color:var(--navy);font-weight:500;text-decoration:none}
+
+/* Hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);color:#fff;padding:64px 0 calc(190px + 8.4vw)}
+.hero__fondo{position:absolute;inset:0;z-index:-2;background:url(assets/hero-abordaje.jpg) 74% 34%/cover no-repeat;transform-origin:72% 40%;animation:acercar 16s ease-out both}
+@keyframes acercar{from{transform:scale(1.09)}to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(11,31,69,.97) 0%,rgba(11,31,69,.93) 34%,rgba(14,38,86,.66) 58%,rgba(37,74,147,.16) 100%),
+  linear-gradient(0deg,rgba(11,31,69,.96) 0%,rgba(11,31,69,0) 44%)}
+.hero__texto{max-width:900px}
+.chip-vivo{display:inline-flex;align-items:center;gap:12px;margin-bottom:24px;padding:8px 16px 8px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font-size:.875rem;font-weight:500}
+.chip-vivo .pulso{color:var(--verde-vivo)}
+.hero h1{color:#fff;font-size:clamp(2.25rem,4.3vw,3.6rem);line-height:1.06;letter-spacing:-.035em}
+.resaltado{background-image:linear-gradient(var(--rojo),var(--rojo));background-repeat:no-repeat;background-position:0 94%;background-size:0% .13em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:subrayar 1.1s .55s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes subrayar{to{background-size:100% .13em}}
+.hero__lead{max-width:570px;margin-top:24px;font-size:clamp(1.05rem,1.55vw,1.25rem);color:rgba(255,255,255,.88)}
+.hero__acciones{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero__garantias{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;font-size:.9375rem;color:rgba(255,255,255,.92)}
+.hero__garantias li{display:flex;align-items:center;gap:9px}
+.check-circulo{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--rojo);color:#fff;flex:none}
+.check-circulo .icono{width:13px;height:13px;stroke-width:3.2}
+
+/* Línea de vida (firma visual: pulso que se vuelve ruta de vuelo) */
+.linea-vida{position:absolute;left:0;bottom:168px;width:100%;height:auto;pointer-events:none}
+.lv-ecg{fill:none;stroke:#FF3B53;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dibujar 1.5s .35s cubic-bezier(.45,0,.2,1) forwards}
+.lv-ruta{fill:none;stroke:url(#lv-grad);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:.1 13;opacity:0;animation:aparecer .9s 1.6s forwards,fluir 1.1s linear 1.6s infinite}
+.lv-avion{opacity:0;animation:aparecer .7s 2.2s forwards}
+.lv-punto{fill:#fff;opacity:0;animation:aparecer .3s 1.9s forwards}
+@keyframes dibujar{to{stroke-dashoffset:0}}
+@keyframes aparecer{to{opacity:1}}
+@keyframes fluir{to{stroke-dashoffset:-13.1}}
+
+/* Tarjeta de solicitud */
+.solicitud{position:relative;z-index:5;margin-top:-160px}
+.tarjeta{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:40px;padding:34px;border-radius:24px;background:#fff;border:1px solid rgba(11,31,69,.06);box-shadow:var(--sombra-alta)}
+.tarjeta h2{font-size:1.55rem}
+.tarjeta__sub{margin-top:6px;font-weight:500;color:var(--gris)}
+.opciones{display:grid;gap:10px;margin-top:18px}
+.opcion{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:1px 14px;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--gris-linea);background:#fff;color:var(--navy);font:inherit;text-align:left;cursor:pointer;transition:border-color .15s,background-color .15s,box-shadow .15s}
+.opcion:hover{border-color:var(--azul-claro)}
+.opcion strong{font-size:1rem;font-weight:600}
+.opcion small{grid-column:2;font-size:.85rem;color:var(--gris-2)}
+.opcion .marca{grid-row:span 2;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:2px solid var(--gris-borde)}
+.opcion[aria-checked="true"]{border-color:var(--azul);background:var(--azul-50);box-shadow:0 0 0 4px rgba(37,74,147,.12)}
+.opcion[aria-checked="true"] .marca{border-color:var(--azul);background:var(--azul)}
+.opcion[aria-checked="true"] .marca::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.opcion--urgente[aria-checked="true"]{border-color:var(--rojo);background:var(--rojo-tinte);box-shadow:0 0 0 4px rgba(230,30,53,.12)}
+.opcion--urgente[aria-checked="true"] .marca{border-color:var(--rojo);background:var(--rojo)}
+.opcion__tag{justify-self:start;display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 9px;border-radius:999px;background:var(--rojo);color:#fff;font-size:.72rem;font-weight:600;vertical-align:middle}
+.panel-ahora__aviso{display:flex;align-items:flex-start;gap:12px;font-size:1.125rem;font-weight:600;color:var(--navy);line-height:1.4}
+.panel-ahora__aviso .icono{margin-top:.12em;color:var(--rojo)}
+.panel-ahora__acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.tener{margin-top:22px;padding:20px 22px;border-radius:16px;background:var(--fondo)}
+.tener h3{font-size:1rem}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:9px 22px;margin-top:12px;font-size:.9375rem;line-height:1.45}
+.checklist li{display:flex;align-items:flex-start;gap:10px}
+.checklist .icono{width:1.05em;height:1.05em;margin-top:.15em;color:var(--rojo);stroke-width:3}
+.tener__nota{margin-top:14px;font-size:.9rem;color:var(--gris-2)}
+.panel-ahora__pie{margin-top:16px}
+.form__titulo{font-size:1.25rem}
+.formulario{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:16px}
+.campo{display:grid;gap:6px;align-content:start}
+.campo--ancho{grid-column:1/-1}
+.campo label{font-size:.9375rem;font-weight:600;color:var(--navy)}
+.campo .opcional{font-weight:400;color:var(--gris-2)}
+.control{width:100%;height:52px;padding:0 20px;border-radius:999px;border:1.5px solid var(--gris-borde);background:#fff;color:var(--navy);font:inherit;font-size:1rem}
+.control::placeholder{color:#6F7273}
+.control:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 4px rgba(37,74,147,.2)}
+.control[aria-invalid="true"]{border-color:var(--rojo);box-shadow:0 0 0 4px rgba(230,30,53,.12)}
+.tel{display:flex}
+.tel__prefijo{display:flex;align-items:center;padding:0 14px 0 20px;border:1.5px solid var(--gris-borde);border-right:0;border-radius:999px 0 0 999px;background:var(--fondo);color:var(--navy);font-weight:500}
+.tel .control{border-radius:0 999px 999px 0}
+.error{display:flex;align-items:flex-start;gap:6px;color:#B0102A;font-size:.875rem;font-weight:500;line-height:1.4}
+.error .icono{width:1.1em;height:1.1em;margin-top:.1em}
+.consentimiento{grid-column:1/-1;display:flex;align-items:flex-start;gap:12px;font-size:.875rem;line-height:1.5}
+.consentimiento input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:var(--azul)}
+.consentimiento a{color:var(--azul);font-weight:600}
+.form__pie{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:4px}
+.form__pie p{font-size:.875rem;color:var(--gris-2)}
+.form__volver{grid-column:1/-1}
+.panel-exito:focus{outline:none}
+.exito__icono{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#E6F6EE;color:#0B7A43}
+.exito__icono .icono{width:30px;height:30px;stroke-width:2.6}
+.panel-exito h3{font-size:1.375rem;margin-top:16px}
+.panel-exito p{margin-top:10px}
+.exito__aviso{margin-top:16px!important;padding:14px 16px;border-radius:12px;background:var(--rojo-tinte);color:var(--navy);font-size:.9375rem}
+.exito__aviso a{color:var(--rojo-osc);font-weight:700}
+.exito__prototipo{font-size:.8rem;color:var(--gris-2)}
+
+/* Secciones */
+.seccion{padding:116px 0}
+.ceja{display:flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--azul);font-size:1.0625rem;font-weight:500}
+.ceja::before{content:"";width:30px;height:2px;border-radius:2px;background:var(--rojo)}
+.ceja--clara{color:var(--azul-claro)}
+.intro{max-width:620px;margin-top:16px;font-size:1.125rem}
+
+/* Cobertura */
+.cobertura{background:var(--fondo)}
+.cobertura__in{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.cifras-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 26px}
+.cifras-mini div{padding:16px;border-radius:14px;background:#fff;border:1px solid var(--gris-linea)}
+.cifras-mini dt{font-size:1.85rem;font-weight:700;line-height:1.1;color:var(--navy);letter-spacing:-.02em}
+.cifras-mini dd{margin:6px 0 0;font-size:.85rem;line-height:1.35;color:var(--gris-2)}
+.cobertura__cta{font-size:1rem}
+.cobertura__cta a{color:var(--azul);font-weight:600}
+.mapa{position:relative;margin:0}
+.mapa svg{display:block;width:100%;height:auto;max-height:760px;overflow:visible}
+.depto{fill:#D3D9E4;stroke:#fff;stroke-width:1.5;transition:fill .7s ease}
+.depto--cob{fill:var(--rojo)}
+.depto--cob2{fill:#B3172B}
+.js .mapa:not(.en-vista) .depto--cob,.js .mapa:not(.en-vista) .depto--cob2{fill:#D3D9E4}
+.ruta{fill:none;stroke:var(--azul-osc);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.3s cubic-bezier(.3,.6,.2,1)}
+.js .mapa:not(.en-vista) .ruta{stroke-dashoffset:1}
+.nodo{fill:#fff;stroke:var(--azul-osc);stroke-width:2.6;transition:opacity .5s ease}
+.js .mapa:not(.en-vista) .nodo,.js .mapa:not(.en-vista) .etiqueta{opacity:0}
+.etiqueta{font-family:'Poppins',sans-serif;font-size:19px;font-weight:600;fill:var(--navy);paint-order:stroke;stroke:#F4F6FA;stroke-width:5px;stroke-linejoin:round;transition:opacity .6s ease 1.4s}
+.etiqueta--base{font-size:22px;font-weight:700}
+.base-punto{fill:var(--rojo);stroke:#fff;stroke-width:3.5}
+.base-anillo{fill:none;stroke:var(--rojo);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:anillo 2.6s ease-out infinite}
+.base-anillo--2{animation-delay:1.3s}
+@keyframes anillo{from{transform:scale(.5);opacity:.9}to{transform:scale(2.8);opacity:0}}
+.avioncito{fill:var(--navy);opacity:0;transition:opacity .5s ease 2.4s}
+.mapa.en-vista .avioncito{opacity:1}
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:.85rem;color:var(--gris-2)}
+.leyenda span{display:inline-flex;align-items:center;gap:8px}
+.muestra{display:inline-block;width:14px;height:14px;border-radius:4px}
+.muestra--linea{width:22px;height:0;border-radius:0;border-top:2.4px solid var(--azul-osc)}
+.muestra--base{border-radius:50%;background:var(--rojo);box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--rojo)}
+
+/* Cómo funciona */
+.pasos{position:relative;margin-top:54px}
+.pasos__lista{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.pasos__ruta{position:absolute;top:34px;left:12.5%;right:12.5%;height:2px;background:repeating-linear-gradient(90deg,#AEBBD6 0 7px,transparent 7px 15px)}
+.pasos__avion{position:absolute;top:-11px;left:0;width:24px;height:24px;color:var(--azul);transform:rotate(90deg)}
+.pasos.en-vista .pasos__avion{animation:volar 3.2s 0.4s cubic-bezier(.45,0,.25,1) both}
+@keyframes volar{from{left:0}to{left:calc(100% - 24px)}}
+.paso{position:relative}
+.paso__icono{position:relative;z-index:1;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#fff;border:2px solid var(--azul-100);color:var(--azul);box-shadow:var(--sombra)}
+.paso__icono .icono{width:28px;height:28px}
+.paso:first-child .paso__icono{background:var(--rojo);border-color:var(--rojo);color:#fff}
+.paso:last-child .paso__icono{background:var(--navy);border-color:var(--navy);color:#fff}
+.paso__num{display:block;margin-top:20px;font-size:.8rem;font-weight:600;letter-spacing:.08em;color:var(--rojo)}
+.paso h3{margin-top:4px;font-size:1.1875rem}
+.paso p{margin-top:8px;font-size:.98rem}
+
+/* Tipos de traslado */
+.tipos{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);color:#fff}
+.tipos__fondo{position:absolute;inset:0;z-index:-2;background:url(assets/hangar.jpg) center 62%/cover no-repeat;filter:grayscale(1) contrast(1.1);opacity:.55}
+.tipos::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(11,31,69,.95) 0%,rgba(18,48,106,.86) 55%,rgba(37,74,147,.78) 100%)}
+.tipos h2{color:#fff}
+.tipos .intro{color:rgba(255,255,255,.85)}
+.tipos__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.tipo{padding:28px 24px;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);transition:transform .25s ease,background-color .25s ease,border-color .25s ease}
+.tipo:hover{transform:translateY(-5px);background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.34)}
+.tipo__icono{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:#fff;color:var(--rojo);box-shadow:0 10px 26px -10px rgba(0,0,0,.5)}
+.tipo__icono .icono{width:30px;height:30px;stroke-width:1.8}
+.tipo h3{margin-top:20px;font-size:1.1875rem;color:#fff}
+.tipo p{margin-top:8px;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.82)}
+.tipos__pie{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:40px;padding:20px 24px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.92)}
+.tipos__pie p{flex:1 1 320px}
+
+/* Indicadores */
+.indicadores{position:relative;overflow:hidden;padding:84px 0;background:var(--rojo);color:#fff}
+.indicadores h2{color:#fff;text-align:center;font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.indicadores__grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:46px;text-align:center}
+.indicador .icono{width:46px;height:46px;margin:0 auto;stroke-width:1.6}
+.indicador strong{display:block;margin-top:14px;font-size:clamp(2.4rem,4.4vw,3.7rem);font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.indicador span{display:block;margin-top:10px;font-size:1rem;line-height:1.4}
+
+/* Por qué PacificFly */
+.porque__in{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.porque__foto{position:relative;margin:0}
+.porque__foto img{width:100%;aspect-ratio:4/3.3;object-fit:cover;object-position:50% 40%;border-radius:24px;box-shadow:var(--sombra-alta)}
+.porque__sello{position:absolute;right:-22px;bottom:34px;display:flex;align-items:center;gap:14px;max-width:290px;padding:16px 18px;border-radius:18px;background:#fff;box-shadow:var(--sombra-alta)}
+.porque__sello .icono-caja{width:50px;height:50px;border-radius:50%;background:var(--rojo);color:#fff}
+.porque__sello strong{display:block;color:var(--navy);font-size:1rem;line-height:1.3}
+.sello__txt span{display:block;font-size:.85rem;color:var(--gris-2);line-height:1.35;margin-top:2px}
+.icono-caja{display:grid;place-items:center;flex:none;width:50px;height:50px;border-radius:14px;background:var(--rojo-tinte);color:var(--rojo)}
+.icono-caja .icono{width:24px;height:24px}
+.razones{display:grid;grid-template-columns:1fr 1fr;gap:28px 30px;margin-top:34px}
+.razon h3{margin-top:14px;font-size:1.0625rem}
+.razon p{margin-top:6px;font-size:.95rem;line-height:1.55}
+.credenciales{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.credenciales li{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid var(--gris-linea);background:#fff;color:var(--navy);font-size:.9rem;font-weight:500}
+.credenciales .icono{color:var(--azul)}
+
+/* Flota */
+.flota{overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--fondo) 100%)}
+.flota__in{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center}
+.flota__lista{display:grid;gap:12px;margin-top:30px}
+.flota__lista li{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid var(--gris-linea)}
+.flota__lista .icono-caja{background:var(--azul-50);color:var(--azul)}
+.flota__lista h3{font-size:1.0625rem}
+.flota__lista p{font-size:.9rem;color:var(--gris-2)}
+.flota__img{position:relative;margin:0}
+.flota__img::before{content:"C90";position:absolute;right:2%;top:-22%;z-index:0;font-size:clamp(7rem,17vw,15rem);font-weight:700;line-height:1;letter-spacing:-.05em;color:var(--azul-50)}
+.flota__img img{position:relative;z-index:1;width:118%;max-width:none;margin-left:-4%}
+.flota__img figcaption{position:relative;z-index:1;margin-top:6px;text-align:center;font-size:.875rem;color:var(--gris-2)}
+
+/* Preguntas frecuentes */
+.faq__in{display:grid;grid-template-columns:4fr 7fr;gap:64px;align-items:start}
+.faq__intro{position:sticky;top:120px}
+.faq__tarjeta{margin-top:30px;padding:24px;border-radius:20px;background:var(--navy);color:#fff}
+.faq__tarjeta p{margin-bottom:16px;color:rgba(255,255,255,.88)}
+.faq__tarjeta strong{display:block;color:#fff;font-size:1.125rem;margin-bottom:4px}
+.acordeon__item{border-bottom:1px solid var(--gris-linea)}
+.acordeon__item:first-child{border-top:1px solid var(--gris-linea)}
+.acordeon__item h3{margin:0;font-size:inherit;letter-spacing:0}
+.acordeon__btn{display:flex;align-items:center;gap:18px;width:100%;padding:24px 0;border:0;background:none;color:var(--navy);font:inherit;text-align:left;cursor:pointer}
+.acordeon__num{min-width:2.2ch;font-size:1.25rem;font-weight:400;color:var(--gris-2)}
+.acordeon__txt{flex:1;font-size:1.125rem;font-weight:600;line-height:1.35}
+.acordeon__flecha{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;background:var(--fondo);transition:transform .25s ease,background-color .2s ease,color .2s ease}
+.acordeon__btn:hover .acordeon__flecha{background:var(--azul-100)}
+.acordeon__btn[aria-expanded="true"] .acordeon__flecha{transform:rotate(180deg);background:var(--rojo);color:#fff}
+.acordeon__panel{padding:0 56px 26px calc(2.2ch + 18px)}
+
+/* Llamado final */
+.final{position:relative;overflow:hidden;padding:104px 0;background:var(--navy);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{margin-top:14px;font-size:1.1875rem;color:rgba(255,255,255,.86)}
+.final__acciones{position:relative;isolation:isolate;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
+.final .btn--wa{background:var(--navy)}
+.final .btn--wa:hover{background:#16306A}
+.final__linea{position:absolute;left:50%;top:50%;z-index:-1;width:100vw;height:120px;transform:translate(-50%,-50%);opacity:.6;pointer-events:none}
+
+/* Pie */
+.pie{background:var(--azul);color:#fff;padding:68px 0 30px;font-size:.9375rem}
+.pie__grid{display:grid;grid-template-columns:1.35fr 1fr 1.45fr .9fr;gap:40px}
+.pie__marca img{height:42px;width:auto}
+.pie__marca p{margin-top:18px;max-width:300px;color:#E3EAF8}
+.pie h2{margin-bottom:14px;color:#fff;font-size:1rem;letter-spacing:0}
+.pie a{color:#fff;text-decoration:none}
+.pie a:hover{text-decoration:underline;text-underline-offset:3px}
+.pie li{margin:9px 0}
+.pie__contacto li{display:flex;align-items:flex-start;gap:12px}
+.pie__contacto .icono{margin-top:.2em}
+.pie__etq{display:block;font-size:.8rem;color:#CBD7F0}
+.pie__tel{font-weight:600;font-size:1rem}
+.redes{display:flex;gap:10px}
+.redes a{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#fff;color:var(--rojo)}
+.redes a:hover{text-decoration:none;transform:translateY(-2px)}
+.pie__base{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.25);color:#E3EAF8;font-size:.875rem}
+.pie__legal{display:flex;flex-wrap:wrap;gap:6px 22px}
+.pie .subir{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--azul)}
+.pie .subir:hover{text-decoration:none}
+
+/* Barra fija de contacto en celular */
+.barra-movil{display:none}
+
+/* Aparición al desplazarse */
+.js .revelar{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.js .revelar.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1100px){
+  .nav,.cabecera__llamar{display:none}
+  .icono-btn{display:inline-flex}
+  .icono-btn--rojo{margin-left:auto}
+  .tarjeta{grid-template-columns:1fr;gap:26px}
+  .opciones{grid-template-columns:repeat(3,1fr)}
+  .cobertura__in,.porque__in,.flota__in,.faq__in{grid-template-columns:1fr}
+  .faq__intro{position:static}
+  .tipos__grid{grid-template-columns:1fr 1fr}
+  .mapa{max-width:640px;margin:0 auto}
+  .porque__sello{right:16px}
+  .flota__img img{width:100%;margin:0}
+}
+@media (max-width:860px){
+  .seccion{padding:76px 0}
+  .pasos__lista{grid-template-columns:1fr;gap:26px}
+  .pasos__ruta{top:0;bottom:0;left:34px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,#AEBBD6 0 7px,transparent 7px 15px)}
+  .pasos__avion{display:none}
+  .paso{display:grid;grid-template-columns:70px 1fr;gap:0 20px}
+  .paso__icono{grid-row:span 3}
+  .paso__num{margin-top:6px}
+  .indicadores__grid{grid-template-columns:1fr 1fr;gap:40px 16px}
+  .final__linea{display:none}
+  .razones{grid-template-columns:1fr}
+  .pie__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  .contenedor{padding:0 16px}
+  .barra-urgencia{font-size:.875rem}
+  .barra-urgencia .largo{display:none}
+  .barra-urgencia .corto{display:inline}
+  .cabecera__in{min-height:64px;gap:10px}
+  .logo img{height:34px}
+  .hero{padding:40px 0 calc(118px + 8.4vw)}
+  .solo-escritorio{display:none}
+  .hero::before{background:linear-gradient(180deg,rgba(11,31,69,.62) 0%,rgba(11,31,69,.9) 38%,rgba(11,31,69,.97) 70%)}
+  .hero__fondo{background-position:72% 0;background-size:auto 62%}
+  .hero__acciones .btn{width:100%;justify-content:flex-start}
+  .linea-vida{bottom:104px}
+  .solicitud{margin-top:-96px}
+  .tarjeta{padding:22px 18px;border-radius:20px}
+  .opciones{grid-template-columns:1fr}
+  .checklist{grid-template-columns:1fr}
+  .formulario{grid-template-columns:1fr}
+  .panel-ahora__acciones .btn{width:100%}
+  .cifras-mini{grid-template-columns:repeat(3,1fr);gap:8px}
+  .cifras-mini div{padding:12px 10px}
+  .cifras-mini dt{font-size:1.4rem}
+  .etiqueta{font-size:30px;stroke-width:7px}
+  .etiqueta--base{font-size:32px}
+  .etiqueta--sec{display:none}
+  .tipos__grid{grid-template-columns:1fr;gap:12px;margin-top:32px}
+  .tipo{display:grid;grid-template-columns:52px 1fr;gap:2px 16px;align-items:start;padding:18px}
+  .tipo__icono{width:52px;height:52px;grid-row:span 2}
+  .tipo__icono .icono{width:24px;height:24px}
+  .tipo h3{margin-top:2px;font-size:1.0625rem}
+  .tipo p{margin-top:2px;font-size:.9rem}
+  .razones{gap:18px;margin-top:26px}
+  .razon{display:grid;grid-template-columns:44px 1fr;gap:0 14px;align-items:start}
+  .razon .icono-caja{width:44px;height:44px;grid-row:span 2}
+  .razon h3{margin-top:0}
+  .razon p{margin-top:2px}
+  .pie__grid{grid-template-columns:1fr 1fr;gap:32px 20px}
+  .pie__marca,.pie__grid>div:nth-child(3){grid-column:1/-1}
+  .flota__lista li{padding:12px 14px}
+  .seccion{padding:64px 0}
+  .porque__sello{position:relative;right:auto;bottom:auto;margin:-40px 16px 0;max-width:none}
+  .acordeon__panel{padding:0 0 22px 0}
+  .acordeon__txt{font-size:1.0625rem}
+  .pie__grid{grid-template-columns:1fr}
+  .barra-movil{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1.35fr 1fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 -10px 30px -12px rgba(11,31,69,.35)}
+  .barra-movil .btn{min-height:56px;padding:.5em .8em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .hero__fondo{animation:none}
+  .js .revelar{opacity:1;transform:none}
+  .movil-anim{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Íconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.1A8.6 8.6 0 1 1 8 19.3z"/><path d="M9.1 8.3c.3-.6.8-.6 1.1-.1l.8 1.7c.1.3 0 .6-.2.8l-.6.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.6c.2-.2.5-.3.8-.2l1.7.8c.5.3.5.8-.1 1.1-1.6.9-3.6.2-5.3-1.5S8.2 9.9 9.1 8.3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-rayo" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-pulso" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="6 10 9 10 10.5 7 13 13 14.5 10 18 10"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-estetoscopio" viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 12 0V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 12 0v-4"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-aislado" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="15"/><line x1="8.5" y1="11.5" x2="15.5" y2="11.5"/></symbol>
+  <symbol id="i-curita" viewBox="0 0 24 24"><g transform="rotate(-45 12 12)"><rect x="1.5" y="7.5" width="21" height="9" rx="4.5"/><rect x="8" y="7.5" width="8" height="9"/><circle cx="10.5" cy="10.5" r=".4" fill="currentColor"/><circle cx="13.5" cy="10.5" r=".4" fill="currentColor"/><circle cx="10.5" cy="13.5" r=".4" fill="currentColor"/><circle cx="13.5" cy="13.5" r=".4" fill="currentColor"/></g></symbol>
+  <symbol id="i-bebe" viewBox="0 0 24 24"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
+  <symbol id="i-cerebro" viewBox="0 0 24 24"><path d="M12.5 3a7.5 7.5 0 0 0-7.4 8.7L4 15.5l2 .5v2.5a2 2 0 0 0 2 2h2V22h7v-4.3A7.5 7.5 0 0 0 12.5 3z"/><polyline points="7.5 11.5 9.5 11.5 10.6 9 12.4 14 13.6 11.5 16 11.5"/></symbol>
+  <symbol id="i-avion" viewBox="0 0 24 24"><path d="M12 2.2c.8 0 1.4 1 1.4 2.4v5.1l7.3 4.2c.4.2.6.6.6 1v1.1l-7.9-2.4v4.6l2 1.6v1.2l-3.4-.9-3.4.9v-1.2l2-1.6v-4.6l-7.9 2.4V15c0-.4.2-.8.6-1l7.3-4.2V4.6c0-1.4.6-2.4 1.4-2.4z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-cama" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 15.5 11 17.5 15 13.5"/></symbol>
+  <symbol id="i-sonrisa" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></symbol>
+  <symbol id="i-abajo" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-arriba" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+  <symbol id="i-flecha" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-volver" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+  <symbol id="i-correo" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8.5V6.8c0-.8.5-1 1-1h2.2V2.2h-3c-3.3 0-4.1 2.4-4.1 4v2.3H8v3.7h2.1V22h3.9v-9.8h2.8l.4-3.7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><line x1="17.4" y1="6.6" x2="17.41" y2="6.6"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+</svg>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<p class="aviso-prototipo" role="note">Propuesta de diseño para revisión. No es la página oficial de PacificFly y el formulario no envía datos.</p>
+
+<div class="barra-urgencia" role="region" aria-label="Línea de urgencias">
+  <div class="contenedor barra-urgencia__in">
+    <p class="barra-urgencia__txt"><span class="pulso" aria-hidden="true"></span><span class="largo">Central de ambulancia aérea: 24 horas, todos los días del año</span><span class="corto">Central 24 horas</span></p>
+    <a class="barra-urgencia__tel" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>+57 301 337 3413</a>
+  </div>
+</div>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__in">
+    <a class="logo" href="#inicio" aria-label="PacificFly, inicio"><img src="assets/logo-pacificfly.png" alt="PacificFly" width="900" height="197"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#inicio" aria-current="page">Ambulancia aérea</a>
+      <a href="#">Taxi aéreo</a>
+      <a href="#">Mercancías peligrosas</a>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn--llamar cabecera__llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Llamar 24 h</a>
+    <a class="icono-btn icono-btn--rojo" href="tel:+573013373413" aria-label="Llamar a la central 24 horas"><svg class="icono"><use href="#i-tel"/></svg></a>
+    <button class="icono-btn menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"><svg class="icono"><use href="#i-menu"/></svg></button>
+  </div>
+  <div id="menu-movil" class="menu-movil" hidden>
+    <nav class="contenedor" aria-label="Menú">
+      <a href="#inicio" aria-current="page">Ambulancia aérea</a>
+      <a href="#">Taxi aéreo</a>
+      <a href="#">Mercancías peligrosas</a>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- 1. Hero: la acción es llamar -->
+  <section class="hero oscuro" id="inicio" aria-labelledby="titulo-principal">
+    <div class="hero__fondo" aria-hidden="true"></div>
+    <div class="contenedor">
+      <div class="hero__texto">
+        <p class="chip-vivo"><span class="pulso" aria-hidden="true"></span>Central activa las 24 horas</p>
+        <h1 id="titulo-principal">Ambulancia aérea,<br class="solo-escritorio"> <span class="resaltado">cuando cada minuto cuenta.</span></h1>
+        <p class="hero__lead">Llámanos y coordinamos todo: el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.</p>
+        <div class="hero__acciones">
+          <a class="btn btn--llamar btn--xl" href="tel:+573013373413">
+            <span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span>
+            <span class="btn__txt"><span>Llamar a la central 24 h</span><small>+57 301 337 3413</small></span>
+          </a>
+          <a class="btn btn--wa btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+        </div>
+        <ul class="hero__garantias">
+          <li><span class="check-circulo"><svg class="icono"><use href="#i-check"/></svg></span>Disponibilidad 24/7</li>
+          <li><span class="check-circulo"><svg class="icono"><use href="#i-check"/></svg></span>Equipo médico a bordo</li>
+          <li><span class="check-circulo"><svg class="icono"><use href="#i-check"/></svg></span>Más de 10 departamentos</li>
+        </ul>
+      </div>
+    </div>
+    <svg class="linea-vida" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="lv-grad" x1="560" y1="0" x2="1380" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity=".95"/></linearGradient>
+        <filter id="lv-brillo" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <path id="lv-ecg" class="lv-ecg" pathLength="1" d="M0 80 H300 C310 80 314 67 323 67 C332 67 336 80 346 80 H362 L370 80 L378 92 L394 14 L410 106 L418 80 H442 C454 80 460 63 474 63 C488 63 494 80 506 80 H560"/>
+      <path class="lv-ruta" pathLength="100" d="M560 80 C760 80 900 72 1060 54 S1300 24 1372 20"/>
+      <circle class="lv-punto movil-anim" r="4.5" filter="url(#lv-brillo)"><animateMotion dur="2.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#lv-ecg"/></animateMotion></circle>
+      <g class="lv-avion" transform="translate(1394 17) rotate(-5)" fill="#fff"><use href="#i-avion" x="-15" y="-15" width="30" height="30" transform="rotate(90)"/></g>
+    </svg>
+  </section>
+
+  <!-- 2. Solicitud: primero se pregunta para cuándo -->
+  <section class="solicitud" aria-labelledby="solicitud-titulo">
+    <div class="contenedor">
+      <div class="tarjeta">
+        <div>
+          <h2 id="solicitud-titulo">Solicita un traslado</h2>
+          <p class="tarjeta__sub" id="cuando">¿Para cuándo lo necesitas?</p>
+          <div class="opciones" role="radiogroup" aria-labelledby="cuando">
+            <button type="button" class="opcion opcion--urgente" role="radio" aria-checked="true" data-modo="ahora"><span class="marca" aria-hidden="true"></span><strong>Ahora mismo <span class="opcion__tag">Urgencia</span></strong><small>El paciente necesita salir ya</small></button>
+            <button type="button" class="opcion" role="radio" aria-checked="false" tabindex="-1" data-modo="pronto"><span class="marca" aria-hidden="true"></span><strong>Hoy o mañana</strong><small>En las próximas 48 horas</small></button>
+            <button type="button" class="opcion" role="radio" aria-checked="false" tabindex="-1" data-modo="programado"><span class="marca" aria-hidden="true"></span><strong>Programado</strong><small>Ya tengo una fecha</small></button>
+          </div>
+        </div>
+
+        <div>
+          <div id="panel-ahora">
+            <p class="panel-ahora__aviso"><svg class="icono"><use href="#i-rayo"/></svg>Para una urgencia, llamar es más rápido que cualquier formulario.</p>
+            <div class="panel-ahora__acciones">
+              <a class="btn btn--llamar btn--xl" href="tel:+573013373413"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la central</span><small>+57 301 337 3413</small></span></a>
+              <a class="btn btn--wa-claro btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>WhatsApp</a>
+            </div>
+            <div class="tener">
+              <h3>Mientras marcas, ten a la mano</h3>
+              <ul class="checklist">
+                <li><svg class="icono"><use href="#i-check"/></svg>Dónde está el paciente: ciudad y clínica</li>
+                <li><svg class="icono"><use href="#i-check"/></svg>Diagnóstico y estado actual</li>
+                <li><svg class="icono"><use href="#i-check"/></svg>Si necesita oxígeno, ventilador o incubadora</li>
+                <li><svg class="icono"><use href="#i-check"/></svg>Clínica de destino y si ya aceptó al paciente</li>
+                <li><svg class="icono"><use href="#i-check"/></svg>Documento del paciente y su EPS o aseguradora</li>
+              </ul>
+              <p class="tener__nota">¿Te falta algún dato? Llama igual: el coordinador te guía.</p>
+            </div>
+            <p class="panel-ahora__pie"><button type="button" class="enlace" id="btn-llamame">Prefiero que me llamen<svg class="icono"><use href="#i-flecha"/></svg></button></p>
+          </div>
+
+          <form id="form-traslado" novalidate hidden>
+            <h3 class="form__titulo" id="form-titulo">Traslado para hoy o mañana</h3>
+            <div class="formulario">
+              <div class="campo" data-en="pronto programado llamame">
+                <label for="f-origen">¿Dónde está el paciente?</label>
+                <input class="control" id="f-origen" name="origen" autocomplete="off" placeholder="Ciudad y clínica" aria-describedby="f-origen-error">
+                <p class="error" id="f-origen-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo" data-en="pronto programado">
+                <label for="f-destino">¿A dónde debe llegar?</label>
+                <input class="control" id="f-destino" name="destino" autocomplete="off" placeholder="Ciudad y clínica de destino" aria-describedby="f-destino-error">
+                <p class="error" id="f-destino-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo campo--ancho" data-en="programado">
+                <label for="f-fecha">Fecha del traslado</label>
+                <input class="control" id="f-fecha" name="fecha" type="date" aria-describedby="f-fecha-error">
+                <p class="error" id="f-fecha-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo" data-en="pronto programado llamame">
+                <label for="f-nombre">Tu nombre</label>
+                <input class="control" id="f-nombre" name="nombre" autocomplete="name" aria-describedby="f-nombre-error">
+                <p class="error" id="f-nombre-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo" data-en="pronto programado llamame">
+                <label for="f-telefono">Teléfono o WhatsApp</label>
+                <div class="tel"><span class="tel__prefijo" aria-hidden="true">+57</span><input class="control" id="f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="301 337 3413" aria-describedby="f-telefono-error"></div>
+                <p class="error" id="f-telefono-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="campo campo--ancho" data-en="pronto programado">
+                <label for="f-correo">Correo <span class="opcional">(opcional)</span></label>
+                <input class="control" id="f-correo" name="correo" type="email" autocomplete="email" aria-describedby="f-correo-error">
+                <p class="error" id="f-correo-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+              </div>
+              <div class="consentimiento" data-en="pronto programado llamame">
+                <input type="checkbox" id="f-datos" name="datos" aria-describedby="f-datos-error">
+                <div>
+                  <label for="f-datos">Autorizo a PacificFly a usar estos datos para coordinar el traslado, según la <a href="#">Política de tratamiento de datos</a>.</label>
+                  <p class="error" id="f-datos-error" hidden><svg class="icono"><use href="#i-alerta"/></svg><span></span></p>
+                </div>
+              </div>
+              <div class="form__pie">
+                <button class="btn btn--llamar" type="submit"><span id="btn-enviar-txt">Solicitar traslado</span><svg class="icono"><use href="#i-flecha"/></svg></button>
+                <p id="form-ayuda">Un coordinador te llama para confirmar el caso, la aeronave y los tiempos.</p>
+              </div>
+              <p class="form__volver" data-en="llamame"><button type="button" class="enlace" id="btn-volver-llamar"><svg class="icono"><use href="#i-volver"/></svg>Prefiero llamar yo</button></p>
+            </div>
+          </form>
+
+          <div id="panel-exito" class="panel-exito" tabindex="-1" role="status" hidden>
+            <span class="exito__icono"><svg class="icono"><use href="#i-check"/></svg></span>
+            <h3>Recibimos tu solicitud</h3>
+            <p id="exito-traslado">Un coordinador te llamará al <strong class="exito-tel"></strong> para confirmar el traslado de <strong id="exito-origen"></strong> a <strong id="exito-destino"></strong>.</p>
+            <p id="exito-llamame" hidden>La central te llamará al <strong class="exito-tel"></strong>.</p>
+            <p class="exito__aviso">Si el paciente empeora, no esperes la llamada: <a href="tel:+573013373413">llama a la central, +57 301 337 3413</a>.</p>
+            <p class="exito__prototipo">Prototipo de propuesta: esta solicitud no se envía.</p>
+            <p><button type="button" class="enlace" id="btn-otra">Hacer otra solicitud</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Cobertura -->
+  <section class="seccion cobertura" id="cobertura" aria-labelledby="cobertura-titulo">
+    <div class="contenedor cobertura__in">
+      <div class="revelar">
+        <p class="ceja">Nuestra cobertura</p>
+        <h2 id="cobertura-titulo">Volamos donde la carretera no llega</h2>
+        <p class="intro">Desde Cali llegamos a los municipios de la costa Pacífica y del suroccidente, y conectamos con las ciudades donde está la atención que tu paciente necesita.</p>
+        <dl class="cifras-mini">
+          <div><dt>+10</dt><dd>departamentos atendidos</dd></div>
+          <div><dt>4</dt><dd>bases de operación</dd></div>
+          <div><dt>24/7</dt><dd>central de coordinación</dd></div>
+        </dl>
+        <p class="cobertura__cta">¿Tu paciente está en otro lugar? <a href="tel:+573013373413">Llámanos</a>: buscamos la pista más cercana y coordinamos el traslado en tierra.</p>
+      </div>
+      <figure class="mapa" id="mapa">
+        <svg id="mapa-svg" role="img" aria-labelledby="mapa-desc"><desc id="mapa-desc">Mapa de Colombia con la base principal en Cali, los departamentos de cobertura frecuente resaltados en rojo y rutas hacia la costa Pacífica, el suroccidente y Santander.</desc></svg>
+        <figcaption class="leyenda">
+          <span><i class="muestra" style="background:var(--rojo)"></i>Cobertura frecuente</span>
+          <span><i class="muestra muestra--base"></i>Base principal</span>
+          <span><i class="muestra muestra--linea"></i>Rutas frecuentes</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4. Cómo funciona -->
+  <section class="seccion" id="como-funciona" aria-labelledby="proceso-titulo">
+    <div class="contenedor">
+      <div class="revelar">
+        <p class="ceja">Cómo funciona</p>
+        <h2 id="proceso-titulo">De la llamada a la clínica de destino</h2>
+      </div>
+      <div class="pasos revelar">
+        <div class="pasos__ruta" aria-hidden="true"><svg class="pasos__avion"><use href="#i-avion"/></svg></div>
+        <ol class="pasos__lista">
+        <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Llamas a la central</h3><p>Te atiende un coordinador, de día o de noche, y toma los datos del paciente.</p></li>
+        <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><span class="paso__num">PASO 2</span><h3>El equipo médico revisa el caso</h3><p>Con el diagnóstico y el estado del paciente se define la aeronave y quién viaja a bordo.</p></li>
+        <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-avion"/></svg></span><span class="paso__num">PASO 3</span><h3>Alistamos el vuelo</h3><p>Avión, tripulación, ambulancias en tierra y la clínica que recibe al paciente.</p></li>
+        <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-cama"/></svg></span><span class="paso__num">PASO 4</span><h3>De cama a cama</h3><p>Recogemos al paciente en la clínica de origen y lo entregamos en la de destino.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Tipos de traslado -->
+  <section class="seccion tipos oscuro" id="tipos" aria-labelledby="tipos-titulo">
+    <div class="tipos__fondo" aria-hidden="true"></div>
+    <div class="contenedor">
+      <div class="revelar">
+        <p class="ceja ceja--clara">Tipos de traslado</p>
+        <h2 id="tipos-titulo">Preparados para cada paciente</h2>
+        <p class="intro">Cada traslado sale con el equipo y el personal que el caso necesita.</p>
+      </div>
+      <ul class="tipos__grid revelar">
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-curita"/></svg></span><h3>Politraumatismo</h3><p>Pacientes con lesiones múltiples que necesitan inmovilización y monitoreo continuo.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-bebe"/></svg></span><h3>Pediátrico y neonatal</h3><p>Recién nacidos y niños, con equipo e insumos pediátricos.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-cerebro"/></svg></span><h3>Neurológico</h3><p>Trauma craneoencefálico, accidente cerebrovascular y otras urgencias neurológicas.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-aislado"/></svg></span><h3>Paciente aislado</h3><p>Traslado con protocolo de aislamiento para enfermedades infecciosas.</p></li>
+      </ul>
+      <div class="tipos__pie revelar">
+        <p>¿El caso de tu paciente no está aquí? Llama a la central y lo evaluamos contigo.</p>
+        <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Consultar mi caso</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Indicadores -->
+  <section class="indicadores" aria-labelledby="indicadores-titulo">
+    <div class="contenedor">
+      <h2 id="indicadores-titulo">Nuestra experiencia, en cifras</h2>
+      <ul class="indicadores__grid">
+        <li class="indicador"><svg class="icono"><use href="#i-pulso"/></svg><strong data-contar="10000" data-prefijo="+">+10.000</strong><span>traslados de pacientes</span></li>
+        <li class="indicador"><svg class="icono"><use href="#i-sonrisa"/></svg><strong data-contar="98" data-sufijo="%">98%</strong><span>de satisfacción de nuestros clientes</span></li>
+        <li class="indicador"><svg class="icono"><use href="#i-pin"/></svg><strong data-contar="10" data-prefijo="+">+10</strong><span>departamentos atendidos</span></li>
+        <li class="indicador"><svg class="icono"><use href="#i-calendario"/></svg><strong data-contar="15" data-prefijo="+">+15</strong><span>años de experiencia</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Por qué PacificFly -->
+  <section class="seccion" id="nosotros" aria-labelledby="porque-titulo">
+    <div class="contenedor porque__in">
+      <figure class="porque__foto revelar">
+        <img src="assets/tripulacion.jpg" alt="Tres pilotos de PacificFly con uniforme, frente a una de las aeronaves" loading="lazy" width="1203" height="549">
+        <figcaption class="porque__sello">
+          <span class="icono-caja"><svg class="icono"><use href="#i-pulso"/></svg></span>
+          <span class="sello__txt"><strong>Médico y paramédico a bordo</strong><span>en cada traslado de ambulancia aérea</span></span>
+        </figcaption>
+      </figure>
+      <div class="revelar">
+        <p class="ceja">Por qué PacificFly</p>
+        <h2 id="porque-titulo">En manos expertas, en el aire y en tierra</h2>
+        <ul class="razones">
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-reloj"/></svg></span><h3>Disponibles 24/7</h3><p>De día o de noche, te atiende una persona, con calma y con respuestas.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-rayo"/></svg></span><h3>Respuesta rápida</h3><p>Activamos el traslado en cuanto confirmamos el caso, sin importar la hora.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><h3>Equipo médico especializado</h3><p>Médicos y paramédicos con entrenamiento en traslado aéreo acompañan al paciente todo el vuelo.</p></li>
+          <li class="razon"><span class="icono-caja"><svg class="icono"><use href="#i-monitor"/></svg></span><h3>Equipamiento completo</h3><p>Monitoreo, oxígeno y soporte vital durante todo el trayecto.</p></li>
+        </ul>
+        <ul class="credenciales">
+          <li><svg class="icono"><use href="#i-escudo"/></svg>Servicio de salud habilitado (REPS)</li>
+          <li><svg class="icono"><use href="#i-avion"/></svg>Operador certificado por la Aerocivil</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Flota -->
+  <section class="seccion flota" id="flota" aria-labelledby="flota-titulo">
+    <div class="contenedor flota__in">
+      <div class="revelar">
+        <p class="ceja">Nuestra flota</p>
+        <h2 id="flota-titulo">La aeronave correcta para cada paciente</h2>
+        <p class="intro">Aviones bimotores configurados como ambulancia aérea. El coordinador asigna la aeronave según el estado del paciente, la ruta y la pista de destino.</p>
+        <ul class="flota__lista">
+          <li><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><div><h3>Beechcraft King Air C90</h3><p>Turbohélice bimotor, cabina presurizada</p></div></li>
+          <li><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><div><h3>Piper PA-34 Seneca IV</h3><p>Bimotor de pistón, trayectos regionales</p></div></li>
+          <li><span class="icono-caja"><svg class="icono"><use href="#i-avion"/></svg></span><div><h3>Piper PA-34 Seneca II</h3><p>Bimotor de pistón, trayectos regionales</p></div></li>
+        </ul>
+      </div>
+      <figure class="flota__img revelar">
+        <img src="assets/king-air-c90.webp" alt="Beechcraft King Air C90 de PacificFly en plataforma" loading="lazy" width="1300" height="391">
+        <figcaption>Beechcraft King Air C90</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 9. Preguntas frecuentes -->
+  <section class="seccion" id="preguntas" aria-labelledby="faq-titulo" style="padding-top:40px">
+    <div class="contenedor faq__in">
+      <div class="faq__intro revelar">
+        <p class="ceja">Preguntas frecuentes</p>
+        <h2 id="faq-titulo">Lo que más nos preguntan las familias y las clínicas</h2>
+        <div class="faq__tarjeta oscuro">
+          <strong>¿Tienes una duda urgente?</strong>
+          <p>No la busques aquí: un coordinador te la responde por teléfono.</p>
+          <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Llamar a la central 24 h</a>
+        </div>
+      </div>
+      <div class="acordeon revelar">
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="true" aria-controls="r1" id="p1"><span class="acordeon__num">01</span><span class="acordeon__txt">¿Qué necesito para solicitar un traslado?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r1" role="region" aria-labelledby="p1"><p>Llama a la central y ten a la mano dónde está el paciente, su diagnóstico y estado actual, y la clínica a la que debe llegar. Si te falta algún dato, llama igual: el coordinador te guía paso a paso.</p></div></div>
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r2" id="p2"><span class="acordeon__num">02</span><span class="acordeon__txt">¿En cuánto tiempo puede despegar el avión?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r2" role="region" aria-labelledby="p2" hidden><p>Depende de la ruta, del estado del paciente y de las condiciones de vuelo y de la pista. Cuando llamas, el coordinador revisa tu caso y te da un tiempo estimado concreto.</p></div></div>
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r3" id="p3"><span class="acordeon__num">03</span><span class="acordeon__txt">¿Quién acompaña al paciente durante el vuelo?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r3" role="region" aria-labelledby="p3" hidden><p>Un equipo médico con entrenamiento en traslado aéreo, que monitorea al paciente desde la clínica de origen hasta la de destino.</p></div></div>
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r4" id="p4"><span class="acordeon__num">04</span><span class="acordeon__txt">¿Puede viajar un familiar con el paciente?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r4" role="region" aria-labelledby="p4" hidden><p>Depende de la aeronave y del estado del paciente. El coordinador te confirma cuántos acompañantes pueden viajar al organizar el vuelo.</p></div></div>
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r5" id="p5"><span class="acordeon__num">05</span><span class="acordeon__txt">¿La EPS o el seguro cubren el traslado?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r5" role="region" aria-labelledby="p5" hidden><p>Depende del plan y de la autorización de la EPS o de la aseguradora. Atendemos traslados autorizados por EPS y aseguradoras, y también traslados particulares. El coordinador te orienta sobre el trámite.</p></div></div>
+        <div class="acordeon__item"><h3><button class="acordeon__btn" type="button" aria-expanded="false" aria-controls="r6" id="p6"><span class="acordeon__num">06</span><span class="acordeon__txt">¿Desde dónde operan?</span><span class="acordeon__flecha"><svg class="icono"><use href="#i-abajo"/></svg></span></button></h3>
+          <div class="acordeon__panel" id="r6" role="region" aria-labelledby="p6" hidden><p>Nuestra base principal está en el hangar 52B del Aeropuerto Internacional Alfonso Bonilla Aragón, que sirve a Cali, y volamos a todo el país.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Llamado final -->
+  <section class="final oscuro" aria-labelledby="final-titulo">
+    <div class="contenedor revelar">
+      <h2 id="final-titulo">¿Tienes un paciente que necesita traslado?</h2>
+      <p>Llama ahora. Te atendemos las 24 horas, todos los días del año.</p>
+      <div class="final__acciones">
+        <svg class="final__linea" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 60 H180 C190 60 194 48 203 48 C212 48 216 60 226 60 H242 L250 60 L258 72 L274 4 L290 112 L298 60 H322 C334 60 340 44 354 44 C368 44 374 60 386 60 H1060 C1070 60 1074 48 1083 48 C1092 48 1096 60 1106 60 H1122 L1130 60 L1138 72 L1154 4 L1170 112 L1178 60 H1202 C1214 60 1220 44 1234 44 C1248 44 1254 60 1266 60 H1440" fill="none" stroke="#E61E35" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
+        <a class="btn btn--llamar btn--xl" href="tel:+573013373413"><span class="timbre"><svg class="icono"><use href="#i-tel"/></svg></span><span class="btn__txt"><span>Llamar a la central 24 h</span><small>+57 301 337 3413</small></span></a>
+        <a class="btn btn--wa btn--xl" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie" id="contacto">
+  <div class="contenedor">
+    <div class="pie__grid">
+      <div class="pie__marca">
+        <img src="assets/logo-pacificfly-blanco.png" alt="PacificFly" width="900" height="197" loading="lazy">
+        <p>Ambulancia aérea, taxi aéreo y transporte de mercancías peligrosas, las 24 horas.</p>
+      </div>
+      <div>
+        <h2>Servicios</h2>
+        <ul>
+          <li><a href="#inicio">Ambulancia aérea</a></li>
+          <li><a href="#">Taxi aéreo</a></li>
+          <li><a href="#">Transporte de mercancías peligrosas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul class="pie__contacto">
+          <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Central de ambulancia aérea 24 h</span><a class="pie__tel" href="tel:+573013373413">+57 301 337 3413</a></span></li>
+          <li><svg class="icono"><use href="#i-tel"/></svg><span><span class="pie__etq">Línea comercial</span><a class="pie__tel" href="tel:+573114099465">+57 311 409 9465</a></span></li>
+          <li><svg class="icono"><use href="#i-correo"/></svg><a href="mailto:info@pacificflycol.com">info@pacificflycol.com</a></li>
+          <li><svg class="icono"><use href="#i-pin"/></svg><span>Hangar 52B, Aeropuerto Internacional Alfonso Bonilla Aragón (Cali)</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <div class="redes">
+          <a href="#" aria-label="PacificFly en Facebook"><svg class="icono"><use href="#i-fb"/></svg></a>
+          <a href="#" aria-label="PacificFly en Instagram"><svg class="icono"><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="PacificFly en LinkedIn"><svg class="icono"><use href="#i-in"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="pie__base">
+      <p>© <span id="anio">2026</span> PacificFly. Todos los derechos reservados.</p>
+      <nav class="pie__legal" aria-label="Información legal">
+        <a href="#">Política de tratamiento de datos</a>
+        <a href="#">Estados financieros</a>
+      </nav>
+      <a class="subir" href="#inicio" aria-label="Volver arriba"><svg class="icono"><use href="#i-arriba"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<nav class="barra-movil" aria-label="Contacto rápido">
+  <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Llamar 24 h</a>
+  <a class="btn btn--wa-claro" href="https://wa.me/573013373413?text=Hola%2C%20necesito%20un%20traslado%20en%20ambulancia%20a%C3%A9rea." target="_blank" rel="noopener"><svg class="icono"><use href="#i-wa"/></svg>WhatsApp</a>
+</nav>
+
+<script src="assets/mapa-colombia.js"></script>
+<script>
+(() => {
+  const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  $('#anio').textContent = new Date().getFullYear();
+
+  // Cabecera con sombra al desplazarse
+  const cabecera = $('.cabecera');
+  const sombra = () => cabecera.classList.toggle('con-sombra', window.scrollY > 8);
+  addEventListener('scroll', sombra, { passive: true }); sombra();
+
+  // Menú en celular
+  const menuBtn = $('.menu-btn'), menu = $('#menu-movil');
+  menuBtn.addEventListener('click', () => {
+    const abierto = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!abierto));
+    menuBtn.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+    menu.hidden = abierto;
+  });
+  $$('#menu-movil a').forEach(a => a.addEventListener('click', () => { menuBtn.setAttribute('aria-expanded', 'false'); menu.hidden = true; }));
+
+  // Cifras que cuentan hasta su valor
+  const contar = (ambito) => $$('[data-contar]', ambito).forEach(el => {
+    const fin = +el.dataset.contar, pre = el.dataset.prefijo || '', suf = el.dataset.sufijo || '';
+    const t0 = performance.now(), dur = 1700;
+    const paso = (t) => {
+      const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + Math.round(fin * e).toLocaleString('es-CO') + suf;
+      if (p < 1) requestAnimationFrame(paso);
+    };
+    requestAnimationFrame(paso);
+  });
+
+  // Aparición al entrar en pantalla
+  const observados = $$('.revelar, .mapa, .pasos, .indicadores');
+  if (reducir || !('IntersectionObserver' in window)) {
+    observados.forEach(el => el.classList.add('visible', 'en-vista'));
+  } else {
+    $$('.indicadores [data-contar]').forEach(el => { el.textContent = (el.dataset.prefijo || '') + '0' + (el.dataset.sufijo || ''); });
+    const io = new IntersectionObserver((entradas) => entradas.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible', 'en-vista');
+      if (e.target.classList.contains('indicadores')) contar(e.target);
+      io.unobserve(e.target);
+    }), { threshold: .2, rootMargin: '0px 0px -6% 0px' });
+    observados.forEach(el => io.observe(el));
+  }
+
+  // Solicitud: primero "para cuándo", después el camino que corresponde
+  const opciones = $$('.opcion');
+  const panelAhora = $('#panel-ahora'), form = $('#form-traslado'), exito = $('#panel-exito');
+  const titulos = { pronto: 'Traslado para hoy o mañana', programado: 'Traslado programado', llamame: 'Te llamamos' };
+  let modo = 'ahora';
+  const fijarModo = (m, foco) => {
+    modo = m;
+    const marcado = m === 'llamame' ? 'ahora' : m;
+    opciones.forEach(o => {
+      const si = o.dataset.modo === marcado;
+      o.setAttribute('aria-checked', String(si));
+      o.tabIndex = si ? 0 : -1;
+      if (si && foco) o.focus();
+    });
+    exito.hidden = true;
+    panelAhora.hidden = m !== 'ahora';
+    form.hidden = m === 'ahora';
+    if (m === 'ahora') return;
+    $$('[data-en]', form).forEach(g => {
+      const ver = g.dataset.en.split(' ').includes(m);
+      g.hidden = !ver;
+      $$('input', g).forEach(i => { i.disabled = !ver; });
+    });
+    $('#form-titulo').textContent = titulos[m];
+    $('#btn-enviar-txt').textContent = m === 'llamame' ? 'Pedir que me llamen' : 'Solicitar traslado';
+    $('#form-ayuda').textContent = m === 'llamame'
+      ? 'La central te llama al número que dejes.'
+      : 'Un coordinador te llama para confirmar el caso, la aeronave y los tiempos.';
+  };
+  opciones.forEach((o, i) => {
+    o.addEventListener('click', () => fijarModo(o.dataset.modo));
+    o.addEventListener('keydown', (e) => {
+      const teclas = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      if (!(e.key in teclas)) return;
+      e.preventDefault();
+      const sig = opciones[(i + teclas[e.key] + opciones.length) % opciones.length];
+      fijarModo(sig.dataset.modo, true);
+    });
+  });
+  $('#btn-llamame').addEventListener('click', () => { fijarModo('llamame'); $('#f-origen').focus(); });
+  $('#btn-volver-llamar').addEventListener('click', () => fijarModo('ahora', true));
+
+  // Validación: el mensaje dice qué falta y qué hacer, junto al campo
+  const soloDigitos = (v) => v.replace(/\D/g, '').replace(/^57(?=\d{10}$)/, '');
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const reglas = {
+    'f-origen': (v) => v.trim() ? '' : 'Falta dónde está el paciente. Escribe la ciudad y, si la sabes, la clínica.',
+    'f-destino': (v) => v.trim() ? '' : 'Falta a dónde debe llegar. Si aún no hay clínica de destino, escribe la ciudad.',
+    'f-fecha': (v) => !v ? 'Falta la fecha del traslado.' : (new Date(v + 'T00:00') < hoy ? 'La fecha ya pasó. Escoge hoy o una fecha posterior.' : ''),
+    'f-nombre': (v) => v.trim() ? '' : 'Falta tu nombre, para saber a quién llamar.',
+    'f-telefono': (v) => soloDigitos(v).length === 10 ? '' : 'Revisa el teléfono: debe tener 10 dígitos, por ejemplo 301 337 3413.',
+    'f-correo': (v) => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Revisa el correo: le falta la @ o el dominio. Si prefieres, déjalo vacío.',
+    'f-datos': (v, el) => el.checked ? '' : 'Para enviar la solicitud necesitamos tu autorización para usar estos datos.'
+  };
+  const marcar = (el, msg) => {
+    const err = document.getElementById(el.id + '-error');
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    err.hidden = !msg;
+    err.querySelector('span').textContent = msg;
+  };
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let primero = null;
+    Object.entries(reglas).forEach(([id, regla]) => {
+      const el = document.getElementById(id);
+      if (el.disabled) return;
+      const msg = regla(el.value, el);
+      marcar(el, msg);
+      if (msg && !primero) primero = el;
+    });
+    if (primero) { primero.focus(); return; }
+    const d = soloDigitos($('#f-telefono').value);
+    $$('.exito-tel').forEach(s => { s.textContent = '+57 ' + d.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3'); });
+    $('#exito-origen').textContent = $('#f-origen').value.trim();
+    $('#exito-destino').textContent = $('#f-destino').value.trim();
+    $('#exito-traslado').hidden = modo === 'llamame';
+    $('#exito-llamame').hidden = modo !== 'llamame';
+    form.hidden = true; exito.hidden = false; exito.focus();
+  });
+  form.addEventListener('input', (e) => {
+    const el = e.target, regla = reglas[el.id];
+    if (regla && el.getAttribute('aria-invalid') === 'true' && !regla(el.value, el)) marcar(el, '');
+  });
+  form.addEventListener('change', (e) => {
+    const el = e.target, regla = reglas[el.id];
+    if (regla && el.type === 'checkbox' && el.getAttribute('aria-invalid') === 'true' && !regla(el.value, el)) marcar(el, '');
+  });
+  $('#btn-otra').addEventListener('click', () => {
+    form.reset(); $$('[aria-invalid]', form).forEach(el => marcar(el, '')); fijarModo('ahora', true);
+  });
+
+  // Preguntas frecuentes
+  $$('.acordeon__btn').forEach(b => b.addEventListener('click', () => {
+    const abierto = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!abierto));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = abierto;
+  }));
+
+  // Mapa de cobertura
+  const datos = window.MAPA_COLOMBIA, svg = $('#mapa-svg');
+  if (datos && svg) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const nodo = (t, a = {}) => { const n = document.createElementNS(NS, t); Object.entries(a).forEach(([k, v]) => n.setAttribute(k, v)); return n; };
+    svg.setAttribute('viewBox', datos.viewBox.join(' '));
+    const cobertura = { 'CHOCO': 1, 'CAUCA': 1, 'PUTUMAYO': 1, 'SANTANDER': 1, 'VALLE DEL CAUCA': 2, 'NARIÑO': 2, 'HUILA': 2 };
+    const gDeptos = nodo('g');
+    let k = 0;
+    Object.entries(datos.deptos).forEach(([nombre, d]) => {
+      const c = cobertura[nombre];
+      const p = nodo('path', { d, class: 'depto' + (c === 1 ? ' depto--cob' : c === 2 ? ' depto--cob2' : '') });
+      if (c) p.style.transitionDelay = (0.15 + 0.09 * k++) + 's';
+      gDeptos.append(p);
+    });
+    const proyectar = (lon, lat) => [67.441663 * lon + 5510.949961, -67.743605 * lat + 905.537433];
+    const [bx, by] = proyectar(-76.3819, 3.5427); // Cali
+    // [nombre, lon, lat, lado de la etiqueta, secundaria (se oculta en celular), ajuste vertical]
+    const destinos = [
+      ['Bucaramanga', -73.1848, 7.1265, 'der'],
+      ['Quibdó', -76.6412, 5.6908, 'der'],
+      ['Bahía Solano', -77.3947, 6.2029, 'izq', true],
+      ['Buenaventura', -76.9898, 3.8196, 'izq'],
+      ['Timbiquí', -77.6680, 2.7786, 'izq', false, -9],
+      ['Guapi', -77.8980, 2.5701, 'izq', true, 15],
+      ['Popayán', -76.6093, 2.4544, 'der', true],
+      ['Neiva', -75.2940, 2.9502, 'der'],
+      ['Tumaco', -78.7492, 1.8144, 'abajo'],
+      ['Pasto', -77.2909, 1.3967, 'der'],
+      ['Puerto Asís', -76.5008, 0.5051, 'der', true]
+    ];
+    const gRutas = nodo('g'), gNodos = nodo('g'), gEtiquetas = nodo('g');
+    destinos.forEach(([nombre, lon, lat, lado, sec, ajuste = 0], i) => {
+      const [x, y] = proyectar(lon, lat);
+      const dx = x - bx, dy = y - by, largo = Math.hypot(dx, dy);
+      let nx = -dy / largo, ny = dx / largo;
+      if (ny > 0) { nx = -nx; ny = -ny; }
+      const curva = Math.min(80, largo * .3);
+      const cx = (bx + x) / 2 + nx * curva, cy = (by + y) / 2 + ny * curva;
+      const ruta = nodo('path', { d: `M${bx},${by} Q${cx},${cy} ${x},${y}`, class: 'ruta', pathLength: '1' });
+      ruta.style.transitionDelay = (0.7 + i * 0.11) + 's';
+      if (nombre === 'Timbiquí') ruta.id = 'ruta-destacada';
+      gRutas.append(ruta);
+      gNodos.append(nodo('circle', { cx: x, cy: y, r: 7, class: 'nodo' }));
+      const t = nodo('text', {
+        class: 'etiqueta' + (sec ? ' etiqueta--sec' : ''),
+        x: lado === 'izq' ? x - 13 : lado === 'abajo' ? x : x + 13,
+        y: (lado === 'abajo' ? y + 30 : y + 6) + ajuste,
+        'text-anchor': lado === 'izq' ? 'end' : lado === 'abajo' ? 'middle' : 'start'
+      });
+      t.textContent = nombre;
+      gEtiquetas.append(t);
+    });
+    const gBase = nodo('g');
+    gBase.append(
+      nodo('circle', { cx: bx, cy: by, r: 12, class: 'base-anillo movil-anim' }),
+      nodo('circle', { cx: bx, cy: by, r: 12, class: 'base-anillo base-anillo--2 movil-anim' }),
+      nodo('circle', { cx: bx, cy: by, r: 11, class: 'base-punto' })
+    );
+    const tBase = nodo('text', { class: 'etiqueta etiqueta--base', x: bx + 20, y: by + 8 });
+    tBase.textContent = 'Cali';
+    gEtiquetas.append(tBase);
+    const avion = nodo('g', { class: 'avioncito movil-anim' });
+    const forma = nodo('use', { href: '#i-avion', x: -17, y: -17, width: 34, height: 34, transform: 'rotate(90)' });
+    const mov = nodo('animateMotion', { dur: '4.8s', repeatCount: 'indefinite', rotate: 'auto', calcMode: 'spline', keyTimes: '0;1', keyPoints: '0;1', keySplines: '.45 0 .25 1' });
+    mov.append(nodo('mpath', { href: '#ruta-destacada' }));
+    avion.append(forma, mov);
+    svg.append(gDeptos, gRutas, gNodos, gBase, avion, gEtiquetas);
+  }
+
+  if (reducir) $$('svg').forEach(s => s.pauseAnimations && s.pauseAnimations());
+})();
+</script>
+</body>
+</html>
