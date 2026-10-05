@@ -1,4 +1,4 @@
-// PacificFly — comportamiento compartido por las páginas de la propuesta (versión 4).
+// PacificFly — comportamiento compartido por las páginas de la propuesta (versión 5).
 // Cada bloque revisa si su sección existe en la página antes de actuar.
 (() => {
   const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -147,6 +147,20 @@
     });
     flotaIn.append(carrusel);
     deslizable(ul, $('.flota__controles', carrusel));
+  }
+
+  // Widget «Ten a la mano»: la persona lo muestra u oculta cuando lo necesita (botón, X o Esc)
+  const ayudaBtn = $('.ayuda__boton'), ayudaPanel = $('#ayuda-panel');
+  if (ayudaBtn && ayudaPanel) {
+    const fijar = (abrir, devolverFoco) => {
+      ayudaBtn.setAttribute('aria-expanded', String(abrir));
+      ayudaPanel.hidden = !abrir;
+      if (abrir) $('#ayuda-titulo').focus({ preventScroll: true });
+      else if (devolverFoco) ayudaBtn.focus({ preventScroll: true });
+    };
+    ayudaBtn.addEventListener('click', () => fijar(ayudaBtn.getAttribute('aria-expanded') !== 'true'));
+    $('.ayuda__cerrar').addEventListener('click', () => fijar(false, true));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && !ayudaPanel.hidden) fijar(false, true); });
   }
 
   // Preguntas frecuentes

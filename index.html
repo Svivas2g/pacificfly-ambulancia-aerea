@@ -7,7 +7,7 @@
 <meta name="description" content="Ambulancia aérea las 24 horas. Llama a la central y coordinamos el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.">
 <meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 4 (2 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
+<!-- PROTOTIPO DE PROPUESTA, versión 5 (4 de octubre de 2026). Textos y decisiones: ver PROPUESTA_PAGINA_AMBULANCIA_AEREA.md -->
 <link rel="stylesheet" href="assets/estilos.css">
 <link rel="preload" as="image" href="assets/hero-abordaje.jpg">
 <script>document.documentElement.classList.add('js')</script>
@@ -69,24 +69,6 @@
           <li><span class="check-circulo"><svg class="icono"><use href="#i-check"/></svg></span>Equipo médico a bordo</li>
           <li><span class="check-circulo"><svg class="icono"><use href="#i-check"/></svg></span>Cobertura nacional</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. Lo que conviene tener preparado antes de comunicarse -->
-  <section class="solicitud" aria-labelledby="solicitud-titulo">
-    <div class="contenedor">
-      <div class="tarjeta tarjeta--lista">
-        <h2 id="solicitud-titulo">Mientras marcas, ten a la mano</h2>
-        <ul class="checklist checklist--3">
-          <li><svg class="icono"><use href="#i-check"/></svg>Dónde está el paciente: ciudad y clínica</li>
-          <li><svg class="icono"><use href="#i-check"/></svg>Diagnóstico y estado actual</li>
-          <li><svg class="icono"><use href="#i-check"/></svg>Si necesita oxígeno, ventilador o incubadora</li>
-          <li><svg class="icono"><use href="#i-check"/></svg>Clínica de destino y si ya aceptó al paciente</li>
-          <li><svg class="icono"><use href="#i-check"/></svg>Documento del paciente y su EPS o aseguradora</li>
-          <li><svg class="icono"><use href="#i-check"/></svg>Quién viaja como acompañante: nombre y documento</li>
-        </ul>
-        <p class="tener__nota">¿Te falta algún dato? Llama igual: el coordinador te guía.</p>
       </div>
     </div>
   </section>
@@ -310,6 +292,26 @@
     </div>
   </div>
 </footer>
+
+<!-- Widget lateral: lo que conviene tener a la mano, se muestra u oculta a pedido -->
+<aside class="ayuda" aria-label="Qué tener a la mano antes de llamar">
+  <button class="ayuda__boton" type="button" aria-expanded="false" aria-controls="ayuda-panel"><svg class="icono"><use href="#i-lista"/></svg><span>Ten a la mano</span></button>
+  <div class="ayuda__panel" id="ayuda-panel" hidden>
+    <div class="ayuda__cabeza">
+      <h2 id="ayuda-titulo" tabindex="-1">Mientras marcas, ten a la mano</h2>
+      <button class="ayuda__cerrar" type="button" aria-label="Ocultar la lista"><svg class="icono"><use href="#i-cerrar"/></svg></button>
+    </div>
+    <ul class="checklist">
+      <li><svg class="icono"><use href="#i-check"/></svg>Dónde está el paciente: ciudad y clínica</li>
+      <li><svg class="icono"><use href="#i-check"/></svg>Diagnóstico y estado actual</li>
+      <li><svg class="icono"><use href="#i-check"/></svg>Si necesita oxígeno, ventilador o incubadora</li>
+      <li><svg class="icono"><use href="#i-check"/></svg>Clínica de destino y si ya aceptó al paciente</li>
+      <li><svg class="icono"><use href="#i-check"/></svg>Documento del paciente y su EPS o aseguradora</li>
+      <li><svg class="icono"><use href="#i-check"/></svg>Quién viaja como acompañante: nombre y documento</li>
+    </ul>
+    <p class="tener__nota">¿Te falta algún dato? Llama igual: el coordinador te guía.</p>
+  </div>
+</aside>
 
 <nav class="barra-movil" aria-label="Contacto rápido">
   <a class="btn btn--llamar" href="tel:+573013373413"><svg class="icono"><use href="#i-tel"/></svg>Llamar 24 h</a>
