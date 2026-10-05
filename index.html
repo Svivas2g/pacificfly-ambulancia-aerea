@@ -7,7 +7,7 @@
 <meta name="description" content="Ambulancia aérea las 24 horas. Llama a la central y coordinamos el avión medicalizado, el equipo médico a bordo y el traslado de clínica a clínica.">
 <meta name="theme-color" content="#0F4289">
 <meta name="robots" content="noindex, nofollow">
-<!-- PROTOTIPO DE PROPUESTA, versión 6 (5 de octubre de 2026). Generado con _fuente/generar.py: no editar este archivo, editar _fuente/. -->
+<!-- PROTOTIPO DE PROPUESTA, versión 7 (5 de octubre de 2026). Generado con _fuente/generar.py: no editar este archivo, editar _fuente/. -->
 <link rel="stylesheet" href="assets/estilos.css">
 <link rel="preload" as="image" href="assets/hero-abordaje.jpg">
 <script>document.documentElement.classList.add('js')</script>
@@ -88,7 +88,7 @@
     <div class="contenedor cobertura__in">
       <div class="revelar">
         <p class="ceja">Nuestra cobertura</p>
-        <h2 id="cobertura-titulo">Volamos por toda Colombia, también donde la carretera no llega</h2>
+        <h2 id="cobertura-titulo">Volamos por toda Colombia</h2>
         <p class="intro solo-web">Llegamos a toda Colombia. Nuestra operación más fuerte está en el suroccidente y la costa Pacífica, donde muchos municipios no tienen carretera. Desde allí conectamos a tu paciente con la ciudad donde está la atención que necesita.</p>
         <p class="intro solo-celular">Operamos en toda Colombia, con presencia estratégica en el suroccidente y la costa Pacífica. Conectamos territorios de difícil acceso con la atención médica que cada paciente necesita.</p>
         <p class="cobertura__zona" id="cobertura-zona" hidden></p>
@@ -100,7 +100,7 @@
         <p class="cobertura__cta">¿Tu paciente está en otra zona? <a href="tel:+573013373413">Llámanos</a>: buscamos el avión y la pista más cercanos y coordinamos el traslado en tierra.</p>
       </div>
       <figure class="mapa" id="mapa">
-        <svg id="mapa-svg" role="img" aria-labelledby="mapa-desc"><desc id="mapa-desc">Mapa de Colombia, con San Andrés y Providencia en un recuadro: cobertura en todo el país, en rojo los departamentos de operación más fuerte, la base principal en Cali, líneas sólidas hacia las ciudades de operación propia y líneas punteadas hacia las ciudades que se atienden con aliados.</desc></svg>
+        <svg id="mapa-svg" role="img" aria-labelledby="mapa-desc"><desc id="mapa-desc">Mapa de Colombia, con San Andrés y Providencia en un recuadro: cobertura en todo el país en azul claro, con las 32 capitales departamentales; en rojo los departamentos de operación más fuerte, la base principal en Cali, líneas sólidas hacia las ciudades de operación propia y líneas punteadas hacia las ciudades que se atienden con aliados.</desc></svg>
         <figcaption class="leyenda">
           <span><i class="muestra muestra--cobertura"></i>Cobertura nacional</span>
           <span><i class="muestra" style="background:var(--rojo)"></i>Operación más fuerte</span>
@@ -123,10 +123,10 @@
         <div class="pasos__ruta" aria-hidden="true"><svg class="pasos__avion"><use href="#i-avion"/></svg></div>
         <div class="pasos__progreso" aria-hidden="true"></div>
         <ol class="pasos__lista">
-          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Llamas a la central</h3><p>Un coordinador te atiende las 24 horas, de día o de noche, y toma los datos del paciente.</p></li>
-          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-documento"/></svg></span><span class="paso__num">PASO 2</span><h3>Envías los soportes médicos</h3><p>Envías la historia clínica, la remisión y la evolución del paciente. Si no tienes todos los documentos, te ayudamos a conseguirlos.</p></li>
+          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-tel"/></svg></span><span class="paso__num">PASO 1</span><h3>Llamas a la central</h3><p>Un coordinador te atiende las 24 horas y toma los datos del paciente.</p></li>
+          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-documento"/></svg></span><span class="paso__num">PASO 2</span><h3>Envías los soportes médicos</h3><p>Envías la historia clínica, la remisión y la evolución del paciente. Si no tienes aceptación, brindamos el servicio de referencia.</p></li>
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-estetoscopio"/></svg></span><span class="paso__num">PASO 3</span><h3>Nuestro equipo médico revisa el caso</h3><p>Según el diagnóstico y las necesidades del paciente, asignamos la aeronave y el personal que viajará a bordo.</p></li>
-          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-avion"/></svg></span><span class="paso__num">PASO 4</span><h3>Coordinamos todo el traslado</h3><p>Te acompañamos con los trámites administrativos y confirmamos contigo los detalles del vuelo. Tú solo debes alistar el equipaje del acompañante.</p></li>
+          <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-avion"/></svg></span><span class="paso__num">PASO 4</span><h3>Coordinamos todo el traslado</h3><p>Te acompañamos con los trámites administrativos. Tú solo debes alistar el equipaje del acompañante.</p></li>
           <li class="paso"><span class="paso__icono"><svg class="icono"><use href="#i-cama"/></svg></span><span class="paso__num">PASO 5</span><h3>Cama a cama</h3><p>Con nuestra red de ambulancias terrestres aliadas en todo el país, trasladamos al paciente desde el hospital o centro de salud de origen hasta el hospital o centro de salud receptor.</p></li>
         </ol>
       </div>
@@ -134,7 +134,7 @@
     </div>
   </section>
 
-  <!-- 5. Tipos de traslado: ocho tarjetas, cada una con su página de detalle -->
+  <!-- 5. Tipos de traslado: ocho tarjetas; en celular, carrusel deslizable -->
   <section class="seccion tipos oscuro" id="tipos" aria-labelledby="tipos-titulo">
     <div class="tipos__fondo" aria-hidden="true"></div>
     <div class="contenedor">
@@ -144,15 +144,16 @@
         <p class="intro">Equipo médico especializado, aeronaves medicalizadas y experiencia en cada tipo de caso: preparamos cada vuelo según la condición del paciente.</p>
       </div>
       <ul class="tipos__grid revelar" id="tipos-lista" aria-label="Tipos de traslado">
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-curita"/></svg></span><h3>Politraumatismo</h3><p>Pacientes con lesiones múltiples por accidentes o caídas que necesitan inmovilización, monitoreo continuo y atención médica especializada durante todo el vuelo.</p><a class="tipo__mas" href="traslado-politraumatismo.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: politraumatismo</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-bebe"/></svg></span><h3>Pediátrico y neonatal</h3><p>Niños, niñas y recién nacidos que necesitan atención especializada en otra ciudad. Viajan con equipo, insumos y personal pediátrico según su condición.</p><a class="tipo__mas" href="traslado-pediatrico-neonatal.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: pediátrico y neonatal</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-cerebro"/></svg></span><h3>Neurológico</h3><p>Pacientes con trauma craneoencefálico, accidente cerebrovascular u otras urgencias neurológicas, que viajan con monitoreo continuo hacia un hospital con atención especializada.</p><a class="tipo__mas" href="traslado-neurologico.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: neurológico</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-aislado"/></svg></span><h3>Paciente aislado</h3><p>Pacientes con enfermedades infecciosas que viajan con protocolo de aislamiento, elementos de protección y desinfección de la aeronave antes y después del vuelo.</p><a class="tipo__mas" href="traslado-paciente-aislado.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: paciente aislado</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-llama"/></svg></span><h3>Gran quemado</h3><p>Quemaduras extensas que requieren llegar a una unidad especializada, con control de líquidos y temperatura.</p><a class="tipo__mas" href="traslado-gran-quemado.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: gran quemado</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-binomio"/></svg></span><h3>Obstétrico y binomio madre e hijo</h3><p>Gestantes con complicaciones del embarazo o del parto, y traslado conjunto de la madre y el recién nacido con el equipo adecuado.</p><a class="tipo__mas" href="traslado-obstetrico-binomio.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: obstétrico y binomio madre e hijo</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-mayor"/></svg></span><h3>Adulto mayor</h3><p>Pacientes mayores que necesitan acompañamiento médico, cuidados especiales y un traslado cómodo y seguro, con atención a sus condiciones de salud previas.</p><a class="tipo__mas" href="traslado-adulto-mayor.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: adulto mayor</span></a></li>
-        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-pulmones"/></svg></span><h3>Paciente ventilado</h3><p>Pacientes que dependen de soporte ventilatorio y viajan con ventilador de transporte, monitoreo continuo y personal entrenado en manejo de vía aérea.</p><a class="tipo__mas" href="traslado-paciente-ventilado.html">Ver más<span aria-hidden="true"> →</span><span class="sr-only">: paciente ventilado</span></a></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-curita"/></svg></span><h3>Politraumatismo</h3><p>Lesiones múltiples por accidentes o caídas, con inmovilización y monitoreo continuo durante todo el vuelo.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-bebe"/></svg></span><h3>Pediátrico y neonatal</h3><p>Niños, niñas y recién nacidos que requieren atención especializada, con equipo y personal pediátrico a bordo.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-cerebro"/></svg></span><h3>Neurológico</h3><p>Trauma craneoencefálico, accidente cerebrovascular y otras urgencias neurológicas, con monitoreo continuo.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-aislado"/></svg></span><h3>Paciente aislado</h3><p>Enfermedades infecciosas con protocolo de aislamiento, protección del equipo y desinfección de la aeronave.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-llama"/></svg></span><h3>Gran quemado</h3><p>Quemaduras extensas que requieren una unidad especializada, con control de líquidos y temperatura a bordo.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-binomio"/></svg></span><h3>Obstétrico y binomio madre e hijo</h3><p>Gestantes con complicaciones y traslado conjunto de la madre y el recién nacido, con el equipo adecuado.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-mayor"/></svg></span><h3>Adulto mayor</h3><p>Pacientes mayores con acompañamiento médico y cuidados especiales, según sus condiciones de salud previas.</p></li>
+        <li class="tipo"><span class="tipo__icono"><svg class="icono"><use href="#i-pulmones"/></svg></span><h3>Paciente ventilado</h3><p>Pacientes con soporte ventilatorio, ventilador de transporte y personal entrenado en manejo de vía aérea.</p></li>
       </ul>
+      <div class="tipos__controles"><button class="tipos__btn" type="button" data-dir="-1" aria-label="Ver el tipo anterior"><svg class="icono"><use href="#i-volver"/></svg></button><span class="tipos__contador" aria-live="polite">1 de 8</span><button class="tipos__btn" type="button" data-dir="1" aria-label="Ver el tipo siguiente"><svg class="icono"><use href="#i-flecha"/></svg></button></div>
     </div>
   </section>
 
@@ -177,7 +178,7 @@
         <h2 id="porque-titulo">En manos expertas, en el aire y en tierra</h2>
       </div>
       <figure class="porque__foto revelar">
-        <img src="assets/tripulacion.jpg" alt="Tres pilotos de PacificFly con uniforme, frente a una de las aeronaves" loading="lazy" width="1500" height="1000">
+        <img src="assets/tripulacion.jpg" alt="Tripulación de PacificFly con uniforme, en el hangar frente a una de las aeronaves" loading="lazy" width="1200" height="900">
         <figcaption class="porque__sello">
           <span class="icono-caja"><svg class="icono"><use href="#i-pulso"/></svg></span>
           <span class="sello__txt"><strong>Médico y paramédico a bordo</strong><span>en cada traslado de ambulancia aérea</span></span>
@@ -295,7 +296,7 @@
     <div class="pie__base">
       <p>© <span id="anio">2026</span> PacificFly. Todos los derechos reservados.</p>
       <nav class="pie__legal" aria-label="Información legal">
-        <a href="#">Política de tratamiento de datos</a>
+        <a href="politica-de-datos.html">Política de tratamiento de datos</a>
         <a href="#">Estados financieros</a>
       </nav>
       <a class="subir" href="#inicio" aria-label="Volver arriba"><svg class="icono"><use href="#i-arriba"/></svg></a>

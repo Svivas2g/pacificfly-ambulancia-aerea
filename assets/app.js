@@ -88,6 +88,10 @@
     actualizar();
   };
 
+  // Tipos de traslado: en celular la cuadrícula se vuelve carrusel deslizable.
+  const tiposLista = $('#tipos-lista');
+  if (tiposLista && $('.tipos__controles')) deslizable(tiposLista, $('.tipos__controles'));
+
   // Flota: al seleccionar un avión cambia la imagen. Sin foto, se muestra el aviso de foto pendiente.
   const pestanas = $$('.flota__tab');
   if (pestanas.length) {
@@ -238,6 +242,25 @@
       ['Pasto', -77.2909, 1.3967, 'der'],
       ['Puerto Asís', -76.5008, 0.5051, 'der', true]
     ];
+    // Capitales departamentales que no son destino de una ruta: punto y nombre pequeño (el nombre solo en escritorio).
+    // San Andrés queda en el recuadro insular. [nombre, lon, lat, lado de la etiqueta, ajuste vertical]
+    const capitales = [
+      ['Leticia', -69.9406, -4.2153, 'izq'], ['Cartagena', -75.4794, 10.391, 'izq'], ['Tunja', -73.3678, 5.5353, 'der'],
+      ['Manizales', -75.5138, 5.0703, 'der'], ['Yopal', -72.3959, 5.3378, 'der'], ['Valledupar', -73.2532, 10.4631, 'der'],
+      ['Montería', -75.8814, 8.7479, 'izq'], ['Inírida', -67.9239, 3.8653, 'izq'], ['San José del Guaviare', -72.6459, 2.5729, 'der'],
+      ['Riohacha', -72.9072, 11.5444, 'der'], ['Santa Marta', -74.199, 11.2408, 'izq', -4], ['Villavicencio', -73.6266, 4.142, 'der'],
+      ['Cúcuta', -72.5078, 7.8939, 'der'], ['Mocoa', -76.6463, 1.1528, 'der', 14], ['Armenia', -75.6811, 4.5339, 'izq', 5],
+      ['Pereira', -75.6961, 4.8133, 'izq', -5], ['Sincelejo', -75.3978, 9.3047, 'izq'], ['Ibagué', -75.2322, 4.4389, 'der'],
+      ['Mitú', -70.2346, 1.2536, 'der'], ['Puerto Carreño', -67.4859, 6.189, 'izq']
+    ];
+    const gCapitales = nodo('g'), gEtCapitales = nodo('g');
+    capitales.forEach(([nombre, lon, lat, lado, ajuste = 0]) => {
+      const [x, y] = proyectar(lon, lat);
+      gCapitales.append(nodo('circle', { cx: x, cy: y, r: 4.5, class: 'capital' }));
+      const t = nodo('text', { class: 'etiqueta etiqueta--capital', x: lado === 'izq' ? x - 9 : x + 9, y: y + 5 + ajuste, 'text-anchor': lado === 'izq' ? 'end' : 'start' });
+      t.textContent = nombre;
+      gEtCapitales.append(t);
+    });
     const zona = llave(new URLSearchParams(location.search).get('zona') || '');
     const gRutas = nodo('g'), gNodos = nodo('g'), gEtiquetas = nodo('g');
     let zonaEncontrada = null;
@@ -279,7 +302,7 @@
     const mov = nodo('animateMotion', { dur: '4.8s', repeatCount: 'indefinite', rotate: 'auto', calcMode: 'spline', keyTimes: '0;1', keyPoints: '0;1', keySplines: '.45 0 .25 1' });
     mov.append(nodo('mpath', { href: '#ruta-destacada' }));
     avion.append(forma, mov);
-    svg.append(gDeptos, gInsular, gRutas, gNodos, gBase, avion, gEtiquetas);
+    svg.append(gDeptos, gInsular, gCapitales, gRutas, gNodos, gBase, avion, gEtCapitales, gEtiquetas);
     // Páginas de campaña por zona: el párrafo nombra la ciudad
     const parrafo = $('#cobertura-zona');
     if (parrafo && (zonaEncontrada || zona === 'cali')) {
