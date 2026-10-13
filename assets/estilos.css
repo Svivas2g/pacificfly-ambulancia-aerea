@@ -188,6 +188,7 @@ select.control{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xm
 .legal__indice a{color:var(--gris);text-decoration:none}
 .legal__indice a:hover{color:var(--azul);text-decoration:underline}
 .legal__texto{max-width:760px}
+.legal__descarga{max-width:760px}.legal__descarga p+p{margin-top:16px}.legal__descarga .btn{margin-top:32px}
 .legal__texto h2{margin-top:44px;font-size:1.5rem;scroll-margin-top:120px}
 .legal__texto h3{font-size:1.0625rem;color:var(--navy)}
 .legal__texto p,.legal__texto li{margin-top:12px;line-height:1.7}
